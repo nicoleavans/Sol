@@ -1,4 +1,4 @@
-package vapor.solitaire;
+package vapor.sol;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;

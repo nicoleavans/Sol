@@ -1,4 +1,4 @@
-package vapor.solitaire;
+package vapor.sol;
 //TODO implement something besides bufferedimage since android doesn't support it
 //import java.awt.image.BufferedImage;
 //import java.io.File;

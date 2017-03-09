@@ -1,4 +1,4 @@
-package vapor.solitaire;
+package vapor.sol;
 /**
  * This method exists to generate a play board instead of leaving it in the main method
  * both for simplicity and also for starting a new game. Also importantly, this can handle

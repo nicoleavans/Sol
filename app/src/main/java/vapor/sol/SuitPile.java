@@ -1,4 +1,4 @@
-package vapor.solitaire;
+package vapor.sol;
 import java.util.Stack;
 
 /**

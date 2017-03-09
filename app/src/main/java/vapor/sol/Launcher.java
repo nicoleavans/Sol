@@ -1,4 +1,4 @@
-package vapor.solitaire;
+package vapor.sol;
 /**
  *This class contains the main method.
  *
