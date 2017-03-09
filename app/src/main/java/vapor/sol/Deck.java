@@ -9,6 +9,10 @@ import java.util.Random;
 
 public class Deck {
 	ArrayList<Card> pile;
+    final String clubs = "clubs";
+    final String diamonds = "diamonds";
+    final String spades = "spades";
+    final String hearts = "hearts";
     /*
      * Constructor
      */
@@ -44,7 +48,7 @@ public class Deck {
           if(i == 4){
             //ints go up to thirteen to cover number and face cards
             for(int j = 1; j <= 13; j++){
-              Card c = new Card("clubs", "black", j);
+              Card c = new Card(clubs, "black", j);
               //this handles assigning the images to the cards
               /*
               if(j == 1){
@@ -109,7 +113,7 @@ public class Deck {
           //spades
           else if(i == 3){
             for(int j = 1; j <= 13; j++){
-              Card c = new Card("spades", "black", j);
+              Card c = new Card(spades, "black", j);
               /*
               if(j == 1){
                 c.setFace("spadea.png");
@@ -170,7 +174,7 @@ public class Deck {
           //hearts
           else if(i == 2){
             for(int j = 1; j <= 13; j++){
-              Card c = new Card("hearts", "red", j);
+              Card c = new Card(hearts, "red", j);
               /*
               if(j == 1){
                 c.setFace("hearta.png");
@@ -234,7 +238,7 @@ public class Deck {
           //diamonds
           else if(i == 1){
             for(int j = 1; j <= 13; j++){
-              Card c = new Card("diamonds", "red", j);
+              Card c = new Card(diamonds, "red", j);
               /*
               if(j == 1){
                 c.setFace("diamonda.png");
