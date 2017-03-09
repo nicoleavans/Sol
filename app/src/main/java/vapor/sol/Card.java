@@ -13,10 +13,10 @@ package vapor.sol;
 
 public class Card {
     //initial variables
-    String suit;
-    String color;
-    int value;
-    boolean faceUp;
+    private String suit;
+    private String color;
+    private int value;
+    private boolean faceUp;
     //BufferedImage face;
     //BufferedImage back;
     //BufferedImage visibleSide;

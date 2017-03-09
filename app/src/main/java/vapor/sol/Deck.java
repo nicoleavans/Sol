@@ -9,14 +9,14 @@ import java.util.Random;
 
 public class Deck {
 	ArrayList<Card> pile;
-    final String clubs = "clubs";
-    final String diamonds = "diamonds";
-    final String spades = "spades";
-    final String hearts = "hearts";
     /*
      * Constructor
      */
     public Deck(){
+        final String clubs = "clubs";
+        final String diamonds = "diamonds";
+        final String spades = "spades";
+        final String hearts = "hearts";
         String backAdr = "";
         Random ran = new Random();
         //TODO handle how the back is chosen this is temp

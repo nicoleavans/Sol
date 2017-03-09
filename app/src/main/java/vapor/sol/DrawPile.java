@@ -13,7 +13,7 @@ import java.util.Queue;
     * Constructor
     */
    public DrawPile(){
-     q = new LinkedList<Card>();
+     q = new LinkedList<>();
    }
    /*
     * This method allows the user to flip through the draw pile.

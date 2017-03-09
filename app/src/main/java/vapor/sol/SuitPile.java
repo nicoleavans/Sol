@@ -8,8 +8,8 @@ import java.util.Stack;
 
  public class SuitPile{
    //instance variables
-   String suit;
-   Stack<Card> pile = new Stack<Card>();
+   private String suit;
+   Stack<Card> pile = new Stack<>();
    /*
     * Constructor
     * @param s	the suit of cards the pile will hold
@@ -27,19 +27,17 @@ import java.util.Stack;
      Card c = d.q.peek();
      Card val;
      //checks if the suit is correct
-     if(c.getSuit() == this.suit){
+     if(c.getSuit().equals(this.suit)){
        //if the pile is empty, it does not peek and simply takes an ace
-       if(pile.empty() == true && c.getValue() == 1){
-         pile.add(c);
-         d.q.remove(c);
+       if(pile.empty() && c.getValue() == 1){
+         pile.add(d.q.remove());
        }
        //elseif the pile does have cards, we peek
-       else if(pile.empty() != true){
+       else if(!pile.empty()){
          val = pile.peek();
          //if the current value on the pile is one less than the card to be added
          if(val.getValue() == c.getValue() + 1){
-           pile.add(c);
-           d.q.remove(c);
+           pile.add(d.q.remove());
          }
        }
      }
@@ -52,19 +50,17 @@ import java.util.Stack;
      Card c = p.pile.peek();
      Card val;
      //checks if the suit is correct
-     if(c.getSuit() == this.suit){
+     if(c.getSuit().equals(this.suit)){
        //if the pile is empty, it does not peek and simply takes an ace
-       if(pile.empty() == true && c.getValue() == 1){
-         pile.add(c);
-         p.pile.pop();
+       if(pile.empty() && c.getValue() == 1){
+         pile.add(p.pile.pop());
        }
        //elseif the pile does have cards, we peek
-       else if(pile.empty() != true){
+       else if(!pile.empty()){
          val = pile.peek();
          //if the current value on the pile is one less than the card to be added
          if(val.getValue() == c.getValue() + 1){
-           pile.add(c);
-           p.pile.pop();
+           pile.add(p.pile.pop());
          }
        }
      }
@@ -77,19 +73,17 @@ import java.util.Stack;
      Card c = s.pile.peek();
      Card val;
      //checks if the suit is correct
-     if(c.getSuit() == this.suit){
+     if(c.getSuit().equals(this.suit)){
        //if the pile is empty, it does not peek and simply takes an ace
-       if(pile.empty() == true && c.getValue() == 1){
-         pile.add(c);
-         s.pile.pop();
+       if(pile.empty() && c.getValue() == 1){
+         pile.add(s.pile.pop());
        }
        //elseif the pile does have cards, we peek
-       else if(pile.empty() != true){
+       else if(!pile.empty()){
          val = pile.peek();
          //if the current value on the pile is one less than the card to be added
          if(val.getValue() == c.getValue() + 1){
-           pile.add(c);
-           s.pile.pop();
+           pile.add(s.pile.pop());
          }
        }
      }

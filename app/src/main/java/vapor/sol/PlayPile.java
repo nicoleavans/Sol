@@ -26,19 +26,15 @@ import java.util.Stack;
      Card c = p.pile.peek();
      Card val;
      //if the pile is empty it can go there regardless
-     if(pile.empty() == true && c.getValue() == 13){
-       //TODO is it more efficient to use
-       //pile.add(p.pile.pop());
-       pile.add(c);
-       p.pile.pop();
+     if(pile.empty() && c.getValue() == 13){
+       pile.add(p.pile.pop());
      }
      //else it has something to peek at and check
-     else if(pile.empty() != true){
+     else if(!pile.empty()){
        val = pile.peek();
        //if the colors are opposite and the value is less, add to the stack
-       if(val.getColor() != c.getColor() && c.getValue() == val.getValue() - 1){
-         pile.add(c);
-         p.pile.pop();
+       if(!val.getColor().equals(c.getColor()) && c.getValue() == val.getValue() - 1){
+         pile.add(p.pile.pop());
        }
      }
    }
@@ -50,19 +46,15 @@ import java.util.Stack;
      Card c = s.pile.peek();
      Card val;
      //if the pile is empty it can go there regardless
-     if(pile.empty() == true && c.getValue() == 13){
-       //TODO evaluate if it would be more efficient to
-       //pile.add(s.pile.pop());
-       pile.add(c);
-       s.pile.pop();
+     if(pile.empty() && c.getValue() == 13){
+       pile.add(s.pile.pop());
      }
      //else it has something to peek at and check
-     else if(pile.empty() != true){
+     else if(!pile.empty()){
        val = pile.peek();
        //if the colors are opposite and the value is less, add to the stack
-       if(val.getColor() != c.getColor() && c.getValue() == val.getValue() - 1){
-         pile.add(c);
-         s.pile.pop();
+       if(!val.getColor().equals(c.getColor()) && c.getValue() == val.getValue() - 1){
+         pile.add(s.pile.pop());
        }
      }
    }
@@ -74,18 +66,15 @@ import java.util.Stack;
      Card c = d.q.peek();
      Card val;
      //if the pile is empty it can go there regardless
-     if(pile.empty() == true && c.getValue() == 13){
-       //TODO evaluate if I should just use pile.add(d.q.remove()); instead
-       pile.add(c);
-       d.q.remove();
+     if(pile.empty() && c.getValue() == 13){
+       pile.add(d.q.remove());
      }
      //else it has something to peek at and check
-     else if(pile.empty() != true){
+     else if(!pile.empty()){
        val = pile.peek();
        //if the colors are opposite and the value is less, add to the stack
-       if(val.getColor() != c.getColor() && c.getValue() == val.getValue() - 1){
-         pile.add(c);
-         d.q.remove();
+       if(!val.getColor().equals(c.getColor()) && c.getValue() == val.getValue() - 1){
+         pile.add(d.q.remove());
        }
      }
    }

@@ -9,19 +9,20 @@ package vapor.sol;
 
  public class PlaySpace{
 
-    final String c = "clubs";
-    final String d = "diamonds";
-    final String s = "spades";
-    final String h = "hearts";
    /*
     * Constructor
     */
    public PlaySpace(){
 
-     SuitPile hearts = new SuitPile(h);
-     SuitPile spades = new SuitPile(s);
-     SuitPile diamonds = new SuitPile(d);
-     SuitPile clubs = new SuitPile(c);
+       final String cl = "clubs";
+       final String di = "diamonds";
+       final String sp = "spades";
+       final String he = "hearts";
+
+     SuitPile hearts = new SuitPile(he);
+     SuitPile spades = new SuitPile(sp);
+     SuitPile diamonds = new SuitPile(di);
+     SuitPile clubs = new SuitPile(cl);
 
      PlayPile one = new PlayPile();
      PlayPile two = new PlayPile();
