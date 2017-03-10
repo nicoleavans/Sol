@@ -6,6 +6,8 @@ package vapor.sol;
 
 //import javax.imageio.ImageIO;
 
+import android.graphics.drawable.BitmapDrawable;
+
 /**
  * This class stores necessary information about cards. Possibly we could phase out color in favor of suit and
  * just add a bit where it checks the suit to determine color? unsure how relevant it really is
@@ -17,9 +19,9 @@ public class Card {
     private String color;
     private int value;
     private boolean faceUp;
-    //BufferedImage face;
-    //BufferedImage back;
-    //BufferedImage visibleSide;
+    BitmapDrawable face;
+    BitmapDrawable back;
+    BitmapDrawable visibleSide;
     /*
      * Constructor
      * @param s  suit
@@ -30,11 +32,11 @@ public class Card {
         suit = s;
         color = c;
         value = v;
-        //face = null;
-        //back = null;
+        face = null;
+        back = null;
         //visible will default to the back side
         faceUp = false;
-        //visibleSide = back;
+        visibleSide = back;
         //debug
         //System.out.println("Expected: suit, color, value" + suit + color + value);
     }
@@ -59,27 +61,10 @@ public class Card {
     public void setValue(int v){
         value = v;
     }
-
-    /*
-     * These methods handle setting the images for the cards.
-
-    public void setFace(String adr){
-      //used almost exactly as it is in the documentation
-      //https://docs.oracle.com/javase/tutorial/2d/images/loadimage.html
-      try{
-        this.face = ImageIO.read(new File(adr));
-      } catch (IOException e) {}
-    }
-    public void setBack(String adr){
-      try{
-        this.back = ImageIO.read(new File(adr));
-      } catch (IOException e){}
-    }
-    */
     /*
      * This method alternates a value saved as visible side between
      * the images for the front and back, to be used for UI support.
-
+     */
     public void flipCard(){
       if(faceUp){
         faceUp = false;
@@ -90,5 +75,4 @@ public class Card {
         visibleSide = face;
       }
     }
-    */
 }
