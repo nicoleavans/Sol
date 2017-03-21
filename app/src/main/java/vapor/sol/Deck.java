@@ -14,6 +14,7 @@ import java.util.Random;
 class Deck {
 	ArrayList<Card> pile;
     Context ctx;
+    Bitmap back;
     /*
      * Constructor
      */
@@ -148,7 +149,6 @@ class Deck {
 
         //TODO handle how the back is chosen this is temp
         Random ran = new Random();
-        Bitmap back;
         int z = ran.nextInt(5);
         if(z == 0){
             back = cb1;
@@ -412,6 +412,9 @@ class Deck {
         Collections.shuffle(pile);
         //debug
         //System.out.println(pile);
+    }
+    public Bitmap returnBack(){
+        return back;
     }
 
 }

@@ -3,11 +3,21 @@ package vapor.sol;
  * This activity comprises the main method.
  */
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageButton;
+
+import static vapor.sol.R.id.heartpile;
+import static vapor.sol.R.id.spadepile;
 
 public class MainActivity extends AppCompatActivity {
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,12 +28,65 @@ public class MainActivity extends AppCompatActivity {
         final String sp = "spades";
         final String he = "hearts";
 
-        //This creates the required piles
+        Resources r = Resources.getSystem();
+        Context ctx = getApplicationContext();
+        Deck d = new Deck(ctx);
+
+        /*
+         * This creates the suitpiles.
+         */
         SuitPile hearts = new SuitPile(he);
         SuitPile spades = new SuitPile(sp);
         SuitPile diamonds = new SuitPile(di);
         SuitPile clubs = new SuitPile(cl);
 
+        /*
+         * This block of code creates ImageButtons and BitmapDrawables to set
+         * the ImageButton backgrounds. The if statements set it to a value for
+         * the current card back if they're empty, otherwise they set to the
+         * card face at the top of the stack.
+         * TODO test if this continually updates, if it doesn't, change that
+         * TODO expand ImageButton functionality
+         */
+        BitmapDrawable back = new BitmapDrawable(r, d.returnBack());
+        //creates an image button and pulls either the card back or the current highest card
+        //to set as the image
+        ImageButton heartpile = (ImageButton)findViewById(R.id.heartpile);
+        BitmapDrawable hc = new BitmapDrawable(r, hearts.getTopCard().face);
+        if(hearts.isEmpty()){
+            heartpile.setBackground(hc);
+        }
+        else{
+            heartpile.setBackground(back);
+        }
+        ImageButton spadepile = (ImageButton)findViewById(R.id.spadepile);
+        BitmapDrawable sc = new BitmapDrawable(r, spades.getTopCard().face);
+        if(spades.isEmpty()){
+            spadepile.setBackground(sc);
+        }
+        else{
+            spadepile.setBackground(back);
+        }
+        ImageButton diamondpile = (ImageButton)findViewById(R.id.diamondpile);
+        BitmapDrawable dc = new BitmapDrawable(r, diamonds.getTopCard().face);
+        if(diamonds.isEmpty()){
+            diamondpile.setBackground(dc);
+        }
+        else{
+            diamondpile.setBackground(back);
+        }
+        ImageButton clubpile = (ImageButton)findViewById(R.id.clubpile);
+        BitmapDrawable cc = new BitmapDrawable(r, clubs.getTopCard().face);
+        if(clubs.isEmpty()){
+            clubpile.setBackground(cc);
+        }
+        else{
+            clubpile.setBackground(back);
+        }
+
+        /*
+         * Creates playpiles.
+         */
         PlayPile one = new PlayPile();
         PlayPile two = new PlayPile();
         PlayPile three = new PlayPile();
@@ -32,12 +95,14 @@ public class MainActivity extends AppCompatActivity {
         PlayPile six = new PlayPile();
         PlayPile seven = new PlayPile();
 
+        /*
+         * Creates drawpile.
+         */
         DrawPile draw = new DrawPile();
 
-        Context ctx = getApplicationContext();
-        Deck d = new Deck(ctx);
-        //this populates the play spaces.
-        //probably a little clumsy, but it seems functional to me
+        /*
+         * This populates the play spaces with the appropriate number of cards.
+         */
         for (int i = 0; i < 52; i++) {
             if (i == 0) {
                 one.pile.push(d.pile.get(i));

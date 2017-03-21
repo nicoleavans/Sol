@@ -88,5 +88,15 @@ class SuitPile{
        }
      }
    }
+   public Card getTopCard(){
+       Card top = pile.peek();
+       return top;
+   }
+   public boolean isEmpty(){
+       if(pile.empty()){
+           return true;
+       }
+       return false;
+   }
 
  }
