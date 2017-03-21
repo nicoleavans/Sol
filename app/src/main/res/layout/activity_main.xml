@@ -6,13 +6,61 @@
     android:layout_height="match_parent"
     tools:context="vapor.sol.MainActivity">
 
-    <TextView
+    <ImageButton
+        android:id="@+id/draw"
+        android:layout_width="57dp"
+        android:layout_height="82dp"
+        app:srcCompat="@drawable/cb1"
+        tools:layout_editor_absoluteX="73dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageButton
+        android:id="@+id/heartpile"
+        android:layout_width="57dp"
+        android:layout_height="82dp"
+        app:srcCompat="@drawable/cb1"
+        tools:layout_editor_absoluteX="197dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageButton
+        android:id="@+id/spadepile"
+        android:layout_width="57dp"
+        android:layout_height="82dp"
+        app:srcCompat="@drawable/cb1"
+        tools:layout_editor_absoluteX="140dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageButton
+        android:id="@+id/clubpile"
+        android:layout_width="57dp"
+        android:layout_height="82dp"
+        app:srcCompat="@drawable/cb1"
+        tools:layout_editor_absoluteX="254dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageButton
+        android:id="@+id/diamondpile"
+        android:layout_width="57dp"
+        android:layout_height="82dp"
+        app:srcCompat="@drawable/cb1"
+        tools:layout_editor_absoluteX="311dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageButton
+        android:id="@+id/drawdeck"
+        android:layout_width="57dp"
+        android:layout_height="82dp"
+        app:srcCompat="@drawable/cb1"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <android.support.constraint.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/guideline"
+        app:layout_constraintGuide_begin="20dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteY="20dp"
+        tools:layout_editor_absoluteX="0dp" />
 
 </android.support.constraint.ConstraintLayout>
