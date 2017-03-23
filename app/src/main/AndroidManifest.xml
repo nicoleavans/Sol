@@ -18,7 +18,18 @@
         </activity>
         <activity
             android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings"></activity>
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name=".GameBoard"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_game_board"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/FullscreenTheme"
+            android:screenOrientation="landscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="vapor.sol.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
