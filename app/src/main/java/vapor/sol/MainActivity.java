@@ -4,16 +4,12 @@ package vapor.sol;
  */
 import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageButton;
-
-import static vapor.sol.R.id.heartpile;
-import static vapor.sol.R.id.spadepile;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
          * the current card back if they're empty, otherwise they set to the
          * card face at the top of the stack.
          * TODO test if this continually updates, if it doesn't, change that
+         * I'm thinking possibly a while program runs loop? but that could be
+         * inefficient it's the morning idk
          * TODO expand ImageButton functionality
          */
         BitmapDrawable back = new BitmapDrawable(r, d.returnBack());

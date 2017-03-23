@@ -25,6 +25,7 @@ class Deck {
         final String spades = "spades";
         final String hearts = "hearts";
 
+        //these bitmaps store the csrd images
         Bitmap cb1;
         Bitmap cb2;
         Bitmap cb3;
@@ -84,6 +85,7 @@ class Deck {
         Bitmap spadeq;
         Bitmap spadek;
 
+        //these are the initializations for the bitmaps
         cluba = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.cluba);
         club2 = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.club2);
         club3 = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.club3);
