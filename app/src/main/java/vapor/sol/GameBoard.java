@@ -20,7 +20,7 @@ import android.widget.ImageView;
  */
 public class GameBoard extends AppCompatActivity {
 
-    ImageView drawPile;
+    ImageView drawPile, pile7_1, pile7_2, pile7_3, pile7_4, pile7_5;
 
     /**
      * Whether or not the system UI should be auto-hidden after
@@ -121,21 +121,77 @@ public class GameBoard extends AppCompatActivity {
         findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
 
         drawPile = (ImageView) findViewById(R.id.drawPile);
+        pile7_1 = (ImageView) findViewById(R.id.pile7_1);
+        pile7_2 = (ImageView) findViewById(R.id.pile7_2);
+        pile7_3 = (ImageView) findViewById(R.id.pile7_3);
+        pile7_4 = (ImageView) findViewById(R.id.pile7_4);
+        pile7_5 = (ImageView) findViewById(R.id.pile7_5);
 
         drawPile.setImageResource(R.drawable.cb4);
         final Animation anim_draw_pile = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.draw_pile);
         drawPile.startAnimation(anim_draw_pile);
-
         anim_draw_pile.setAnimationListener(new Animation.AnimationListener() {
             @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
+            public void onAnimationStart(Animation animation) {}
             @Override
             public void onAnimationEnd(Animation animation) {
                 anim_draw_pile.setAnimationListener(null);
                 // Start next animation
+                pile7_1.setImageResource(R.drawable.cb4);
+                final Animation anim_pile7_1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile7_1);
+                pile7_1.startAnimation(anim_pile7_1);
+                anim_pile7_1.setAnimationListener(new Animation.AnimationListener(){
+                    @Override
+                    public void onAnimationStart(Animation animation) { }
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        // Start next animation
+                        pile7_2.setImageResource(R.drawable.cb4);
+                        final Animation anim_pile7_2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile7_2);
+                        pile7_2.startAnimation(anim_pile7_2);
+                        anim_pile7_2.setAnimationListener(new Animation.AnimationListener(){
+                            @Override
+                            public void onAnimationStart(Animation animation) { }
+                            @Override
+                            public void onAnimationEnd(Animation animation) {
+                                // Start next animation
+                                pile7_3.setImageResource(R.drawable.cb4);
+                                final Animation anim_pile7_3 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile7_3);
+                                pile7_3.startAnimation(anim_pile7_3);
+                                anim_pile7_3.setAnimationListener(new Animation.AnimationListener(){
+                                    @Override
+                                    public void onAnimationStart(Animation animation) { }
+                                    @Override
+                                    public void onAnimationEnd(Animation animation) {
+                                        // Start next animation
+                                        pile7_4.setImageResource(R.drawable.cb4);
+                                        final Animation anim_pile7_4 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile7_4);
+                                        pile7_4.startAnimation(anim_pile7_4);
+                                        anim_pile7_4.setAnimationListener(new Animation.AnimationListener(){
+                                            @Override
+                                            public void onAnimationStart(Animation animation) { }
+                                            @Override
+                                            public void onAnimationEnd(Animation animation) {
+                                                // Start next animation
+                                                pile7_5.setImageResource(R.drawable.cb4);
+                                                final Animation anim_pile7_5 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile7_5);
+                                                pile7_5.startAnimation(anim_pile7_5);
+                                            }
+                                            @Override
+                                            public void onAnimationRepeat(Animation animation) { }
+                                        });
+                                    }
+                                    @Override
+                                    public void onAnimationRepeat(Animation animation) { }
+                                });
+                            }
+                            @Override
+                            public void onAnimationRepeat(Animation animation) { }
+                        });
+                    }
+                    @Override
+                    public void onAnimationRepeat(Animation animation) { }
+                });
 
             }
 
