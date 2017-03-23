@@ -6,6 +6,7 @@ package vapor.sol;
 
 //import javax.imageio.ImageIO;
 
+import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 
 /**
@@ -13,22 +14,22 @@ import android.graphics.drawable.BitmapDrawable;
  * just add a bit where it checks the suit to determine color? unsure how relevant it really is
  */
 
-public class Card {
+ class Card {
     //initial variables
     private String suit;
     private String color;
     private int value;
     private boolean faceUp;
-    BitmapDrawable face;
-    BitmapDrawable back;
-    BitmapDrawable visibleSide;
+    Bitmap face;
+    Bitmap back;
+    Bitmap visibleSide;
     /*
      * Constructor
      * @param s  suit
      * @param c  color
      * @param v  value
      */
-    public Card(String s, String c, int v){
+     Card(String s, String c, int v){
         suit = s;
         color = c;
         value = v;
@@ -43,19 +44,19 @@ public class Card {
     /*
      * Getters and setters.
      */
-    public String getSuit(){
+    String getSuit(){
         return suit;
     }
     public void setSuit(String s){
         suit = s;
     }
-    public String getColor(){
+    String getColor(){
         return color;
     }
     public void setColor(String s){
         color = s;
     }
-    public int getValue(){
+    int getValue(){
         return value;
     }
     public void setValue(int v){
