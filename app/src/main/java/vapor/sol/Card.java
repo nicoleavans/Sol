@@ -62,6 +62,12 @@ import android.graphics.drawable.BitmapDrawable;
     public void setValue(int v){
         value = v;
     }
+    Bitmap getFace(){return face;}
+    Bitmap getBack(){return back;}
+    Bitmap getVisibleSide(){return visibleSide;}
+    public void setFace(Bitmap b){face = b;}
+    public void setBack(Bitmap b){back = b;}
+    public void setVisibleSide(Bitmap b){visibleSide = b;}
     /*
      * This method alternates a value saved as visible side between
      * the images for the front and back, to be used for UI support.
