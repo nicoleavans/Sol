@@ -1,6 +1,7 @@
 package vapor.sol;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +22,7 @@ import android.widget.ImageView;
 public class GameBoard extends AppCompatActivity {
 
     ImageView drawPile;
+    Context ctx = getApplicationContext();
 
     /**
      * Whether or not the system UI should be auto-hidden after
@@ -166,7 +168,7 @@ public class GameBoard extends AppCompatActivity {
 
         DrawPile draw = new DrawPile();
 
-        Deck d = new Deck();
+        Deck d = new Deck(ctx);
         //this populates the play spaces.
         //probably a little clumsy, but it seems functional to me
         for(int i = 0; i < 52; i++){
