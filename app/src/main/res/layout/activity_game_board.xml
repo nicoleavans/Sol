@@ -22,14 +22,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
-        android:gravity="center"
         android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/drawPile2"
+            android:layout_width="60dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:keepScreenOn="false"
+            android:src="@drawable/cb4" />
 
         <ImageView
             android:id="@+id/drawPile"
             android:layout_width="60dp"
             android:layout_height="100dp"
+            android:layout_marginLeft="200dp"
+            android:layout_gravity="center"
             android:src="@drawable/cb4"/>
+
+
+
 
 
 
@@ -61,6 +73,10 @@
                 android:text="I Give Up!" />
 
         </LinearLayout>
+
+
+
+
     </FrameLayout>
 
 </FrameLayout>

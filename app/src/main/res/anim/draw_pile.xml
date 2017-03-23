@@ -5,6 +5,6 @@
     <translate
         android:fromXDelta="0%"
         android:repeatCount="26"
-        android:toXDelta="-465%"/>
+        android:toXDelta="-425%"/>
 
 </set>
