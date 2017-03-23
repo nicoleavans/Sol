@@ -145,6 +145,7 @@ public class GameBoard extends AppCompatActivity {
             }
         });
 
+
         final String cl = "clubs";
         final String di = "diamonds";
         final String sp = "spades";
@@ -194,6 +195,7 @@ public class GameBoard extends AppCompatActivity {
                 draw.q.add(d.pile.get(i));
             }
         }
+
     }
 
     @Override
