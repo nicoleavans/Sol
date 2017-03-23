@@ -6,7 +6,7 @@ import java.util.Stack;
  * to win.
  */
 
-class SuitPile{
+ public class SuitPile{
    //instance variables
    private String suit;
    Stack<Card> pile = new Stack<>();
@@ -14,7 +14,7 @@ class SuitPile{
     * Constructor
     * @param s	the suit of cards the pile will hold
     */
-   SuitPile(String s){
+   public SuitPile(String s){
      suit = s;
    }
    /*
@@ -87,16 +87,6 @@ class SuitPile{
          }
        }
      }
-   }
-   public Card getTopCard(){
-       Card top = pile.peek();
-       return top;
-   }
-   public boolean isEmpty(){
-       if(pile.empty()){
-           return true;
-       }
-       return false;
    }
 
  }

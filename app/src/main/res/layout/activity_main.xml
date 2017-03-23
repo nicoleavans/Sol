@@ -1,18 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context="vapor.sol.MainActivity">
 
-    <android.support.constraint.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/guideline"
-        app:layout_constraintGuide_begin="20dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteY="20dp"
-        tools:layout_editor_absoluteX="0dp" />
+        android:gravity="center"
+        android:layout_height="wrap_content">
 
-</android.support.constraint.ConstraintLayout>
+        <ImageView
+            android:id="@+id/left"
+            android:layout_marginRight="60dp"
+            android:layout_width="60dp"
+            android:layout_height="100dp"
+            android:src="@drawable/cb4"/>
+        <ImageView
+            android:id="@+id/middle"
+            android:layout_width="60dp"
+            android:layout_height="100dp"
+            android:src="@drawable/cb4"/>
+        <ImageView
+            android:id="@+id/right"
+            android:layout_marginLeft="60dp"
+            android:layout_width="60dp"
+            android:layout_height="100dp"
+            android:src="@drawable/cb4"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/new_game"
+        android:layout_marginTop="20dp"
+        android:layout_width="200dp"
+        android:text="NEW GAME"
+        android:layout_height="wrap_content" />
+
+
+
+
+</LinearLayout>
