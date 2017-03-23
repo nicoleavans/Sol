@@ -1,5 +1,6 @@
 package vapor.sol;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -52,11 +53,33 @@ public class MainActivity extends AppCompatActivity {
 
                 Animation anim_left = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.left);
                 Animation anim_middle = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.middle);
-                Animation anim_right = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.right);
+                final Animation anim_right = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.right);
 
                 left.startAnimation(anim_left);
                 middle.startAnimation(anim_middle);
                 right.startAnimation(anim_right);
+
+                anim_right.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        anim_right.setAnimationListener(null);
+                        // Start GameBoard activity
+                        Intent myIntent = new Intent(MainActivity.this, GameBoard.class);
+                        startActivity(myIntent);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+
+
             }
         });
 
