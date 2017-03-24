@@ -29,7 +29,6 @@ public class GameBoard extends AppCompatActivity {
             pile2_1, pile2_2,
             pile1_1;
 
-    Context ctx = getApplicationContext();
 
     /**
      * Whether or not the system UI should be auto-hidden after
@@ -578,6 +577,7 @@ public class GameBoard extends AppCompatActivity {
             }
         });
 
+        /*
         final String cl = "clubs";
         final String di = "diamonds";
         final String sp = "spades";
@@ -627,7 +627,7 @@ public class GameBoard extends AppCompatActivity {
                 draw.q.add(d.pile.get(i));
             }
         }
-
+        */
     }
 
 
