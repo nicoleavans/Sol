@@ -20,7 +20,13 @@ import android.widget.ImageView;
  */
 public class GameBoard extends AppCompatActivity {
 
-    ImageView drawPile, pile7_1, pile7_2, pile7_3, pile7_4, pile7_5;
+    ImageView drawPile, pile7_1, pile7_2, pile7_3, pile7_4, pile7_5, pile7_6, pile7_7,
+            pile6_1, pile6_2, pile6_3, pile6_4, pile6_5, pile6_6,
+            pile5_1, pile5_2, pile5_3, pile5_4, pile5_5,
+            pile4_1, pile4_2, pile4_3, pile4_4,
+            pile3_1, pile3_2, pile3_3,
+            pile2_1, pile2_2,
+            pile1_1;
 
     /**
      * Whether or not the system UI should be auto-hidden after
@@ -126,6 +132,36 @@ public class GameBoard extends AppCompatActivity {
         pile7_3 = (ImageView) findViewById(R.id.pile7_3);
         pile7_4 = (ImageView) findViewById(R.id.pile7_4);
         pile7_5 = (ImageView) findViewById(R.id.pile7_5);
+        pile7_6 = (ImageView) findViewById(R.id.pile7_6);
+        pile7_7 = (ImageView) findViewById(R.id.pile7_7);
+
+        pile6_1 = (ImageView) findViewById(R.id.pile6_1);
+        pile6_2 = (ImageView) findViewById(R.id.pile6_2);
+        pile6_3 = (ImageView) findViewById(R.id.pile6_3);
+        pile6_4 = (ImageView) findViewById(R.id.pile6_4);
+        pile6_5 = (ImageView) findViewById(R.id.pile6_5);
+        pile6_6 = (ImageView) findViewById(R.id.pile6_6);
+
+        pile5_1 = (ImageView) findViewById(R.id.pile5_1);
+        pile5_2 = (ImageView) findViewById(R.id.pile5_2);
+        pile5_3 = (ImageView) findViewById(R.id.pile5_3);
+        pile5_4 = (ImageView) findViewById(R.id.pile5_4);
+        pile5_5 = (ImageView) findViewById(R.id.pile5_5);
+
+        pile4_1 = (ImageView) findViewById(R.id.pile4_1);
+        pile4_2 = (ImageView) findViewById(R.id.pile4_2);
+        pile4_3 = (ImageView) findViewById(R.id.pile4_3);
+        pile4_4 = (ImageView) findViewById(R.id.pile4_4);
+
+        pile3_1 = (ImageView) findViewById(R.id.pile3_1);
+        pile3_2 = (ImageView) findViewById(R.id.pile3_2);
+        pile3_3 = (ImageView) findViewById(R.id.pile3_3);
+
+        pile2_1 = (ImageView) findViewById(R.id.pile2_1);
+        pile2_2 = (ImageView) findViewById(R.id.pile2_2);
+
+        pile1_1 = (ImageView) findViewById(R.id.pile1_1);
+
 
         drawPile.setImageResource(R.drawable.cb4);
         final Animation anim_draw_pile = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.draw_pile);
@@ -145,6 +181,7 @@ public class GameBoard extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) { }
                     @Override
                     public void onAnimationEnd(Animation animation) {
+                        anim_pile7_1.setAnimationListener(null);
                         // Start next animation
                         pile7_2.setImageResource(R.drawable.cb4);
                         final Animation anim_pile7_2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile7_2);
@@ -154,28 +191,364 @@ public class GameBoard extends AppCompatActivity {
                             public void onAnimationStart(Animation animation) { }
                             @Override
                             public void onAnimationEnd(Animation animation) {
+                                anim_pile7_2.setAnimationListener(null);
                                 // Start next animation
-                                pile7_3.setImageResource(R.drawable.cb4);
-                                final Animation anim_pile7_3 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile7_3);
-                                pile7_3.startAnimation(anim_pile7_3);
-                                anim_pile7_3.setAnimationListener(new Animation.AnimationListener(){
+                                pile6_1.setImageResource(R.drawable.cb4);
+                                final Animation anim_pile6_1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile6_1);
+                                pile6_1.startAnimation(anim_pile6_1);
+                                anim_pile6_1.setAnimationListener(new Animation.AnimationListener(){
                                     @Override
                                     public void onAnimationStart(Animation animation) { }
                                     @Override
                                     public void onAnimationEnd(Animation animation) {
+                                        anim_pile6_1.setAnimationListener(null);
                                         // Start next animation
-                                        pile7_4.setImageResource(R.drawable.cb4);
-                                        final Animation anim_pile7_4 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile7_4);
-                                        pile7_4.startAnimation(anim_pile7_4);
-                                        anim_pile7_4.setAnimationListener(new Animation.AnimationListener(){
+                                        pile7_3.setImageResource(R.drawable.cb4);
+                                        final Animation anim_pile7_3 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile7_3);
+                                        pile7_3.startAnimation(anim_pile7_3);
+                                        anim_pile7_3.setAnimationListener(new Animation.AnimationListener(){
                                             @Override
                                             public void onAnimationStart(Animation animation) { }
                                             @Override
                                             public void onAnimationEnd(Animation animation) {
+                                                anim_pile7_3.setAnimationListener(null);
                                                 // Start next animation
-                                                pile7_5.setImageResource(R.drawable.cb4);
-                                                final Animation anim_pile7_5 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile7_5);
-                                                pile7_5.startAnimation(anim_pile7_5);
+                                                pile6_2.setImageResource(R.drawable.cb4);
+                                                final Animation anim_pile6_2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile6_2);
+                                                pile6_2.startAnimation(anim_pile6_2);
+                                                anim_pile6_2.setAnimationListener(new Animation.AnimationListener(){
+                                                    @Override
+                                                    public void onAnimationStart(Animation animation) { }
+                                                    @Override
+                                                    public void onAnimationEnd(Animation animation) {
+                                                        anim_pile6_2.setAnimationListener(null);
+                                                        // Start next animation
+                                                        pile5_1.setImageResource(R.drawable.cb4);
+                                                        final Animation anim_pile5_1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile5_1);
+                                                        pile5_1.startAnimation(anim_pile5_1);
+                                                        anim_pile5_1.setAnimationListener(new Animation.AnimationListener(){
+                                                            @Override
+                                                            public void onAnimationStart(Animation animation) { }
+                                                            @Override
+                                                            public void onAnimationEnd(Animation animation) {
+                                                                anim_pile5_1.setAnimationListener(null);
+                                                                // Start next animation
+                                                                pile7_4.setImageResource(R.drawable.cb4);
+                                                                final Animation anim_pile7_4 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile7_4);
+                                                                pile7_4.startAnimation(anim_pile7_4);
+                                                                anim_pile7_4.setAnimationListener(new Animation.AnimationListener(){
+                                                                    @Override
+                                                                    public void onAnimationStart(Animation animation) { }
+                                                                    @Override
+                                                                    public void onAnimationEnd(Animation animation) {
+                                                                        anim_pile7_4.setAnimationListener(null);
+                                                                        // Start next animation
+                                                                        pile6_3.setImageResource(R.drawable.cb4);
+                                                                        final Animation anim_pile6_3 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile6_3);
+                                                                        pile6_3.startAnimation(anim_pile6_3);
+                                                                        anim_pile6_3.setAnimationListener(new Animation.AnimationListener(){
+                                                                            @Override
+                                                                            public void onAnimationStart(Animation animation) { }
+                                                                            @Override
+                                                                            public void onAnimationEnd(Animation animation) {
+                                                                                anim_pile6_3.setAnimationListener(null);
+                                                                                // Start next animation
+                                                                                pile5_2.setImageResource(R.drawable.cb4);
+                                                                                final Animation anim_pile5_2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile5_2);
+                                                                                pile5_2.startAnimation(anim_pile5_2);
+                                                                                anim_pile5_2.setAnimationListener(new Animation.AnimationListener(){
+                                                                                    @Override
+                                                                                    public void onAnimationStart(Animation animation) { }
+                                                                                    @Override
+                                                                                    public void onAnimationEnd(Animation animation) {
+                                                                                        anim_pile5_2.setAnimationListener(null);
+                                                                                        // Start next animation
+                                                                                        pile4_1.setImageResource(R.drawable.cb4);
+                                                                                        final Animation anim_pile4_1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile4_1);
+                                                                                        pile4_1.startAnimation(anim_pile4_1);
+                                                                                        anim_pile4_1.setAnimationListener(new Animation.AnimationListener(){
+                                                                                            @Override
+                                                                                            public void onAnimationStart(Animation animation) { }
+                                                                                            @Override
+                                                                                            public void onAnimationEnd(Animation animation) {
+                                                                                                anim_pile4_1.setAnimationListener(null);
+                                                                                                // Start next animation
+                                                                                                pile7_5.setImageResource(R.drawable.cb4);
+                                                                                                final Animation anim_pile7_5 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile7_5);
+                                                                                                pile7_5.startAnimation(anim_pile7_5);
+                                                                                                anim_pile7_5.setAnimationListener(new Animation.AnimationListener(){
+                                                                                                    @Override
+                                                                                                    public void onAnimationStart(Animation animation) { }
+                                                                                                    @Override
+                                                                                                    public void onAnimationEnd(Animation animation) {
+                                                                                                        anim_pile7_5.setAnimationListener(null);
+                                                                                                        // Start next animation
+                                                                                                        pile6_4.setImageResource(R.drawable.cb4);
+                                                                                                        final Animation anim_pile6_4 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile6_4);
+                                                                                                        pile6_4.startAnimation(anim_pile6_4);
+                                                                                                        anim_pile6_4.setAnimationListener(new Animation.AnimationListener(){
+                                                                                                            @Override
+                                                                                                            public void onAnimationStart(Animation animation) { }
+                                                                                                            @Override
+                                                                                                            public void onAnimationEnd(Animation animation) {
+                                                                                                                anim_pile6_4.setAnimationListener(null);
+                                                                                                                // Start next animation
+                                                                                                                pile5_3.setImageResource(R.drawable.cb4);
+                                                                                                                final Animation anim_pile5_3 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile5_3);
+                                                                                                                pile5_3.startAnimation(anim_pile5_3);
+                                                                                                                anim_pile5_3.setAnimationListener(new Animation.AnimationListener(){
+                                                                                                                    @Override
+                                                                                                                    public void onAnimationStart(Animation animation) { }
+                                                                                                                    @Override
+                                                                                                                    public void onAnimationEnd(Animation animation) {
+                                                                                                                        anim_pile5_3.setAnimationListener(null);
+                                                                                                                        // Start next animation
+                                                                                                                        pile4_2.setImageResource(R.drawable.cb4);
+                                                                                                                        final Animation anim_pile4_2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile4_2);
+                                                                                                                        pile4_2.startAnimation(anim_pile4_2);
+                                                                                                                        anim_pile4_2.setAnimationListener(new Animation.AnimationListener(){
+                                                                                                                            @Override
+                                                                                                                            public void onAnimationStart(Animation animation) { }
+                                                                                                                            @Override
+                                                                                                                            public void onAnimationEnd(Animation animation) {
+                                                                                                                                anim_pile4_2.setAnimationListener(null);
+                                                                                                                                // Start next animation
+                                                                                                                                pile3_1.setImageResource(R.drawable.cb4);
+                                                                                                                                final Animation anim_pile3_1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile3_1);
+                                                                                                                                pile3_1.startAnimation(anim_pile3_1);
+                                                                                                                                anim_pile3_1.setAnimationListener(new Animation.AnimationListener(){
+                                                                                                                                    @Override
+                                                                                                                                    public void onAnimationStart(Animation animation) { }
+                                                                                                                                    @Override
+                                                                                                                                    public void onAnimationEnd(Animation animation) {
+                                                                                                                                        anim_pile3_1.setAnimationListener(null);
+                                                                                                                                        // Start next animation
+                                                                                                                                        pile7_6.setImageResource(R.drawable.cb4);
+                                                                                                                                        final Animation anim_pile7_6 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile7_6);
+                                                                                                                                        pile7_6.startAnimation(anim_pile7_6);
+                                                                                                                                        anim_pile7_6.setAnimationListener(new Animation.AnimationListener(){
+                                                                                                                                            @Override
+                                                                                                                                            public void onAnimationStart(Animation animation) { }
+                                                                                                                                            @Override
+                                                                                                                                            public void onAnimationEnd(Animation animation) {
+                                                                                                                                                anim_pile7_6.setAnimationListener(null);
+                                                                                                                                                // Start next animation
+                                                                                                                                                pile6_5.setImageResource(R.drawable.cb4);
+                                                                                                                                                final Animation anim_pile6_5 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile6_5);
+                                                                                                                                                pile6_5.startAnimation(anim_pile6_5);
+                                                                                                                                                anim_pile6_5.setAnimationListener(new Animation.AnimationListener(){
+                                                                                                                                                    @Override
+                                                                                                                                                    public void onAnimationStart(Animation animation) { }
+                                                                                                                                                    @Override
+                                                                                                                                                    public void onAnimationEnd(Animation animation) {
+                                                                                                                                                        anim_pile6_5.setAnimationListener(null);
+                                                                                                                                                        // Start next animation
+                                                                                                                                                        pile5_4.setImageResource(R.drawable.cb4);
+                                                                                                                                                        final Animation anim_pile5_4 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile5_4);
+                                                                                                                                                        pile5_4.startAnimation(anim_pile5_4);
+                                                                                                                                                        anim_pile5_4.setAnimationListener(new Animation.AnimationListener(){
+                                                                                                                                                            @Override
+                                                                                                                                                            public void onAnimationStart(Animation animation) { }
+                                                                                                                                                            @Override
+                                                                                                                                                            public void onAnimationEnd(Animation animation) {
+                                                                                                                                                                anim_pile5_4.setAnimationListener(null);
+                                                                                                                                                                // Start next animation
+                                                                                                                                                                pile4_3.setImageResource(R.drawable.cb4);
+                                                                                                                                                                final Animation anim_pile4_3 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile4_3);
+                                                                                                                                                                pile4_3.startAnimation(anim_pile4_3);
+                                                                                                                                                                anim_pile4_3.setAnimationListener(new Animation.AnimationListener(){
+                                                                                                                                                                    @Override
+                                                                                                                                                                    public void onAnimationStart(Animation animation) { }
+                                                                                                                                                                    @Override
+                                                                                                                                                                    public void onAnimationEnd(Animation animation) {
+                                                                                                                                                                        anim_pile4_3.setAnimationListener(null);
+                                                                                                                                                                        // Start next animation
+                                                                                                                                                                        pile3_2.setImageResource(R.drawable.cb4);
+                                                                                                                                                                        final Animation anim_pile3_2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile3_2);
+                                                                                                                                                                        pile3_2.startAnimation(anim_pile3_2);
+                                                                                                                                                                        anim_pile3_2.setAnimationListener(new Animation.AnimationListener(){
+                                                                                                                                                                            @Override
+                                                                                                                                                                            public void onAnimationStart(Animation animation) { }
+                                                                                                                                                                            @Override
+                                                                                                                                                                            public void onAnimationEnd(Animation animation) {
+                                                                                                                                                                                anim_pile3_2.setAnimationListener(null);
+                                                                                                                                                                                // Start next animation
+                                                                                                                                                                                pile2_1.setImageResource(R.drawable.cb4);
+                                                                                                                                                                                final Animation anim_pile2_1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile2_1);
+                                                                                                                                                                                pile2_1.startAnimation(anim_pile2_1);
+                                                                                                                                                                                anim_pile2_1.setAnimationListener(new Animation.AnimationListener(){
+                                                                                                                                                                                    @Override
+                                                                                                                                                                                    public void onAnimationStart(Animation animation) { }
+                                                                                                                                                                                    @Override
+                                                                                                                                                                                    public void onAnimationEnd(Animation animation) {
+                                                                                                                                                                                        anim_pile2_1.setAnimationListener(null);
+                                                                                                                                                                                        // Start next animation
+                                                                                                                                                                                        pile7_7.setImageResource(R.drawable.cb4);
+                                                                                                                                                                                        final Animation anim_pile7_7 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile7_7);
+                                                                                                                                                                                        pile7_7.startAnimation(anim_pile7_7);
+                                                                                                                                                                                        anim_pile7_7.setAnimationListener(new Animation.AnimationListener(){
+                                                                                                                                                                                            @Override
+                                                                                                                                                                                            public void onAnimationStart(Animation animation) { }
+                                                                                                                                                                                            @Override
+                                                                                                                                                                                            public void onAnimationEnd(Animation animation) {
+                                                                                                                                                                                                anim_pile7_7.setAnimationListener(null);
+                                                                                                                                                                                                // Start next animation
+                                                                                                                                                                                                pile6_6.setImageResource(R.drawable.cb4);
+                                                                                                                                                                                                final Animation anim_pile6_6 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile6_6);
+                                                                                                                                                                                                pile6_6.startAnimation(anim_pile6_6);
+                                                                                                                                                                                                anim_pile6_6.setAnimationListener(new Animation.AnimationListener(){
+                                                                                                                                                                                                    @Override
+                                                                                                                                                                                                    public void onAnimationStart(Animation animation) { }
+                                                                                                                                                                                                    @Override
+                                                                                                                                                                                                    public void onAnimationEnd(Animation animation) {
+                                                                                                                                                                                                        anim_pile6_6.setAnimationListener(null);
+                                                                                                                                                                                                        // Start next animation
+                                                                                                                                                                                                        pile5_5.setImageResource(R.drawable.cb4);
+                                                                                                                                                                                                        final Animation anim_pile5_5 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile5_5);
+                                                                                                                                                                                                        pile5_5.startAnimation(anim_pile5_5);
+                                                                                                                                                                                                        anim_pile5_5.setAnimationListener(new Animation.AnimationListener(){
+                                                                                                                                                                                                            @Override
+                                                                                                                                                                                                            public void onAnimationStart(Animation animation) { }
+                                                                                                                                                                                                            @Override
+                                                                                                                                                                                                            public void onAnimationEnd(Animation animation) {
+                                                                                                                                                                                                                anim_pile5_5.setAnimationListener(null);
+                                                                                                                                                                                                                // Start next animation
+                                                                                                                                                                                                                pile4_4.setImageResource(R.drawable.cb4);
+                                                                                                                                                                                                                final Animation anim_pile4_4 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile4_4);
+                                                                                                                                                                                                                pile4_4.startAnimation(anim_pile4_4);
+                                                                                                                                                                                                                anim_pile4_4.setAnimationListener(new Animation.AnimationListener(){
+                                                                                                                                                                                                                    @Override
+                                                                                                                                                                                                                    public void onAnimationStart(Animation animation) { }
+                                                                                                                                                                                                                    @Override
+                                                                                                                                                                                                                    public void onAnimationEnd(Animation animation) {
+                                                                                                                                                                                                                        anim_pile4_4.setAnimationListener(null);
+                                                                                                                                                                                                                        // Start next animation
+                                                                                                                                                                                                                        pile3_3.setImageResource(R.drawable.cb4);
+                                                                                                                                                                                                                        final Animation anim_pile3_3 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile3_3);
+                                                                                                                                                                                                                        pile3_3.startAnimation(anim_pile3_3);
+                                                                                                                                                                                                                        anim_pile3_3.setAnimationListener(new Animation.AnimationListener(){
+                                                                                                                                                                                                                            @Override
+                                                                                                                                                                                                                            public void onAnimationStart(Animation animation) { }
+                                                                                                                                                                                                                            @Override
+                                                                                                                                                                                                                            public void onAnimationEnd(Animation animation) {
+                                                                                                                                                                                                                                anim_pile3_3.setAnimationListener(null);
+                                                                                                                                                                                                                                // Start next animation
+                                                                                                                                                                                                                                pile2_2.setImageResource(R.drawable.cb4);
+                                                                                                                                                                                                                                final Animation anim_pile2_2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile2_2);
+                                                                                                                                                                                                                                pile2_2.startAnimation(anim_pile2_2);
+                                                                                                                                                                                                                                anim_pile2_2.setAnimationListener(new Animation.AnimationListener(){
+                                                                                                                                                                                                                                    @Override
+                                                                                                                                                                                                                                    public void onAnimationStart(Animation animation) { }
+                                                                                                                                                                                                                                    @Override
+                                                                                                                                                                                                                                    public void onAnimationEnd(Animation animation) {
+                                                                                                                                                                                                                                        anim_pile2_2.setAnimationListener(null);
+                                                                                                                                                                                                                                        // Start next animation
+                                                                                                                                                                                                                                        pile1_1.setImageResource(R.drawable.cb4);
+                                                                                                                                                                                                                                        final Animation anim_pile1_1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile1_1);
+                                                                                                                                                                                                                                        pile1_1.startAnimation(anim_pile1_1);
+                                                                                                                                                                                                                                        anim_pile1_1.setAnimationListener(new Animation.AnimationListener(){
+                                                                                                                                                                                                                                            @Override
+                                                                                                                                                                                                                                            public void onAnimationStart(Animation animation) { }
+                                                                                                                                                                                                                                            @Override
+                                                                                                                                                                                                                                            public void onAnimationEnd(Animation animation) {
+                                                                                                                                                                                                                                                anim_pile1_1.setAnimationListener(null);
+                                                                                                                                                                                                                                                // Start next animation
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                            @Override
+                                                                                                                                                                                                                                            public void onAnimationRepeat(Animation animation) { }
+                                                                                                                                                                                                                                        });
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                    @Override
+                                                                                                                                                                                                                                    public void onAnimationRepeat(Animation animation) { }
+                                                                                                                                                                                                                                });
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                            @Override
+                                                                                                                                                                                                                            public void onAnimationRepeat(Animation animation) { }
+                                                                                                                                                                                                                        });
+                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                    @Override
+                                                                                                                                                                                                                    public void onAnimationRepeat(Animation animation) { }
+                                                                                                                                                                                                                });
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                            @Override
+                                                                                                                                                                                                            public void onAnimationRepeat(Animation animation) { }
+                                                                                                                                                                                                        });
+                                                                                                                                                                                                    }
+                                                                                                                                                                                                    @Override
+                                                                                                                                                                                                    public void onAnimationRepeat(Animation animation) { }
+                                                                                                                                                                                                });
+                                                                                                                                                                                            }
+                                                                                                                                                                                            @Override
+                                                                                                                                                                                            public void onAnimationRepeat(Animation animation) { }
+                                                                                                                                                                                        });
+                                                                                                                                                                                    }
+                                                                                                                                                                                    @Override
+                                                                                                                                                                                    public void onAnimationRepeat(Animation animation) { }
+                                                                                                                                                                                });
+                                                                                                                                                                            }
+                                                                                                                                                                            @Override
+                                                                                                                                                                            public void onAnimationRepeat(Animation animation) { }
+                                                                                                                                                                        });
+                                                                                                                                                                    }
+                                                                                                                                                                    @Override
+                                                                                                                                                                    public void onAnimationRepeat(Animation animation) { }
+                                                                                                                                                                });
+                                                                                                                                                            }
+                                                                                                                                                            @Override
+                                                                                                                                                            public void onAnimationRepeat(Animation animation) { }
+                                                                                                                                                        });
+                                                                                                                                                    }
+                                                                                                                                                    @Override
+                                                                                                                                                    public void onAnimationRepeat(Animation animation) { }
+                                                                                                                                                });
+                                                                                                                                            }
+                                                                                                                                            @Override
+                                                                                                                                            public void onAnimationRepeat(Animation animation) { }
+                                                                                                                                        });
+                                                                                                                                    }
+                                                                                                                                    @Override
+                                                                                                                                    public void onAnimationRepeat(Animation animation) { }
+                                                                                                                                });
+                                                                                                                            }
+                                                                                                                            @Override
+                                                                                                                            public void onAnimationRepeat(Animation animation) { }
+                                                                                                                        });
+                                                                                                                    }
+                                                                                                                    @Override
+                                                                                                                    public void onAnimationRepeat(Animation animation) { }
+                                                                                                                });
+                                                                                                            }
+                                                                                                            @Override
+                                                                                                            public void onAnimationRepeat(Animation animation) { }
+                                                                                                        });
+                                                                                                    }
+                                                                                                    @Override
+                                                                                                    public void onAnimationRepeat(Animation animation) { }
+                                                                                                });
+                                                                                            }
+                                                                                            @Override
+                                                                                            public void onAnimationRepeat(Animation animation) { }
+                                                                                        });
+                                                                                    }
+                                                                                    @Override
+                                                                                    public void onAnimationRepeat(Animation animation) { }
+                                                                                });
+                                                                            }
+                                                                            @Override
+                                                                            public void onAnimationRepeat(Animation animation) { }
+                                                                        });
+                                                                    }
+                                                                    @Override
+                                                                    public void onAnimationRepeat(Animation animation) { }
+                                                                });
+                                                            }
+                                                            @Override
+                                                            public void onAnimationRepeat(Animation animation) { }
+                                                        });
+                                                    }
+                                                    @Override
+                                                    public void onAnimationRepeat(Animation animation) { }
+                                                });
                                             }
                                             @Override
                                             public void onAnimationRepeat(Animation animation) { }
@@ -188,6 +561,7 @@ public class GameBoard extends AppCompatActivity {
                             @Override
                             public void onAnimationRepeat(Animation animation) { }
                         });
+
                     }
                     @Override
                     public void onAnimationRepeat(Animation animation) { }
@@ -200,6 +574,8 @@ public class GameBoard extends AppCompatActivity {
 
             }
         });
+
+
     }
 
     @Override
