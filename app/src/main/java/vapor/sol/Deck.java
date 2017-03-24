@@ -13,7 +13,7 @@ import java.util.Random;
 
 class Deck {
 	ArrayList<Card> pile;
-    Context ctx;
+    private Context ctx;
     /*
      * Constructor
      */
