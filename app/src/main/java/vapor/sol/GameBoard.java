@@ -574,6 +574,8 @@ public class GameBoard extends AppCompatActivity {
 
             }
         });
+        
+        =======
 
         final String cl = "clubs";
         final String di = "diamonds";
