@@ -598,7 +598,7 @@ public class GameBoard extends AppCompatActivity {
 
         DrawPile draw = new DrawPile();
 
-        Deck d = new Deck(ctx);
+        Deck d = new Deck();
         //this populates the play spaces.
         //probably a little clumsy, but it seems functional to me
         for(int i = 0; i < 52; i++){
