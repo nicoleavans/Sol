@@ -7,13 +7,13 @@ import java.util.Stack;
  * from suit pile because of move rules.
  */
 
- public class PlayPile{
+  class PlayPile{
 	 
 	 Stack<Card> pile;
    /*
     * Constructor
     */
-   public PlayPile(){
+   PlayPile(){
      pile = new Stack<Card>();
    }
    /*

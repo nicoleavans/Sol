@@ -7,12 +7,12 @@ import java.util.Queue;
  *
  */
 
- public class DrawPile{
+  class DrawPile{
 	Queue<Card> q;
    /*
     * Constructor
     */
-   public DrawPile(){
+   DrawPile(){
      q = new LinkedList<>();
    }
    /*
