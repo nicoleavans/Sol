@@ -1,8 +1,6 @@
 package vapor.sol;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -629,37 +627,37 @@ public class GameBoard extends AppCompatActivity {
         pile7_2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //pile7_2.setImageResource(getResources().getIdentifier(d.pile.get(1).getImgadr(), "drawable", getPackageName()));
+                pile7_2.setImageResource(getResources().getIdentifier(d.pile.get(1).getImgadr(), "drawable", getPackageName()));
             }
         });
         pile7_3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //pile7_3.setImageResource(getResources().getIdentifier(d.pile.get(2).getImgadr(), "drawable", getPackageName()));
+                pile7_3.setImageResource(getResources().getIdentifier(d.pile.get(2).getImgadr(), "drawable", getPackageName()));
             }
         });
         pile7_4.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //pile7_4.setImageResource(getResources().getIdentifier(d.pile.get(3).getImgadr(), "drawable", getPackageName()));
+                pile7_4.setImageResource(getResources().getIdentifier(d.pile.get(3).getImgadr(), "drawable", getPackageName()));
             }
         });
         pile7_5.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //pile7_5.setImageResource(getResources().getIdentifier(d.pile.get(4).getImgadr(), "drawable", getPackageName()));
+                pile7_5.setImageResource(getResources().getIdentifier(d.pile.get(4).getImgadr(), "drawable", getPackageName()));
             }
         });
         pile7_6.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //pile7_6.setImageResource(getResources().getIdentifier(d.pile.get(5).getImgadr(), "drawable", getPackageName()));
+                pile7_6.setImageResource(getResources().getIdentifier(d.pile.get(5).getImgadr(), "drawable", getPackageName()));
             }
         });
         pile7_7.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //pile7_7.setImageResource(getResources().getIdentifier(d.pile.get(6).getImgadr(), "drawable", getPackageName()));
+                pile7_7.setImageResource(getResources().getIdentifier(d.pile.get(6).getImgadr(), "drawable", getPackageName()));
             }
         });
 
@@ -672,31 +670,31 @@ public class GameBoard extends AppCompatActivity {
         pile6_2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //pile6_2.setImageResource(getResources().getIdentifier(d.pile.get(8).getImgadr(), "drawable", getPackageName()));
+                pile6_2.setImageResource(getResources().getIdentifier(d.pile.get(8).getImgadr(), "drawable", getPackageName()));
             }
         });
         pile6_3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //pile6_3.setImageResource(getResources().getIdentifier(d.pile.get(9).getImgadr(), "drawable", getPackageName()));
+                pile6_3.setImageResource(getResources().getIdentifier(d.pile.get(9).getImgadr(), "drawable", getPackageName()));
             }
         });
         pile6_4.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //pile6_4.setImageResource(getResources().getIdentifier(d.pile.get(10).getImgadr(), "drawable", getPackageName()));
+                pile6_4.setImageResource(getResources().getIdentifier(d.pile.get(10).getImgadr(), "drawable", getPackageName()));
             }
         });
         pile6_5.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //pile6_5.setImageResource(getResources().getIdentifier(d.pile.get(11).getImgadr(), "drawable", getPackageName()));
+                pile6_5.setImageResource(getResources().getIdentifier(d.pile.get(11).getImgadr(), "drawable", getPackageName()));
             }
         });
         pile6_6.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //pile6_6.setImageResource(getResources().getIdentifier(d.pile.get(12).getImgadr(), "drawable", getPackageName()));
+                pile6_6.setImageResource(getResources().getIdentifier(d.pile.get(12).getImgadr(), "drawable", getPackageName()));
             }
         });
 
@@ -709,25 +707,25 @@ public class GameBoard extends AppCompatActivity {
         pile5_2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //pile5_2.setImageResource(getResources().getIdentifier(d.pile.get(14).getImgadr(), "drawable", getPackageName()));
+                pile5_2.setImageResource(getResources().getIdentifier(d.pile.get(14).getImgadr(), "drawable", getPackageName()));
             }
         });
         pile5_3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //pile5_3.setImageResource(getResources().getIdentifier(d.pile.get(15).getImgadr(), "drawable", getPackageName()));
+                pile5_3.setImageResource(getResources().getIdentifier(d.pile.get(15).getImgadr(), "drawable", getPackageName()));
             }
         });
         pile5_4.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //pile5_4.setImageResource(getResources().getIdentifier(d.pile.get(16).getImgadr(), "drawable", getPackageName()));
+                pile5_4.setImageResource(getResources().getIdentifier(d.pile.get(16).getImgadr(), "drawable", getPackageName()));
             }
         });
         pile5_5.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //pile5_5.setImageResource(getResources().getIdentifier(d.pile.get(17).getImgadr(), "drawable", getPackageName()));
+                pile5_5.setImageResource(getResources().getIdentifier(d.pile.get(17).getImgadr(), "drawable", getPackageName()));
             }
         });
 
