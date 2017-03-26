@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //The following is logic for the Cups game, use as reference for now
         left.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
