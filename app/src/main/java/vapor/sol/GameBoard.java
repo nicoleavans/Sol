@@ -168,6 +168,34 @@ public class GameBoard extends AppCompatActivity {
 
         draw = new DrawPile();
 
+        /*
+         * TODO sync up with image view assignment
+         * I think this is correct but testing needs to happen
+         */
+        for(int i = 0; i < 52; i++){
+            if(i > 20 && i < 28){
+                seven.pile.push(d.pile.get(i));
+            }
+            else if(i > 14 && i < 21){
+                six.pile.push(d.pile.get(i));
+            }
+            else if(i > 9 && i < 15){
+                five.pile.push(d.pile.get(i));
+            }
+            else if(i > 5 && i < 10){
+                four.pile.push(d.pile.get(i));
+            }
+            else if(i > 2 && i < 6){
+                three.pile.push(d.pile.get(i));
+            }
+            else if(i == 1 || i == 2){
+                two.pile.push(d.pile.get(i));
+            }
+            else if(i == 0){
+                one.pile.push(d.pile.get(i));
+            }
+        }
+
         drawPile = (ImageView) findViewById(R.id.drawPile);
         pile7_1 = (ImageView) findViewById(R.id.pile7_1);
         pile7_2 = (ImageView) findViewById(R.id.pile7_2);
