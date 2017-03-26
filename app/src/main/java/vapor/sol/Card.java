@@ -9,21 +9,17 @@ package vapor.sol;
     private String suit;
     private String color;
     private int value;
-    private int cardID;
+    private String imgadr;
     /*
      * Constructor
      * @param s  suit
      * @param c  color
      * @param v  value
      */
-     Card(String s, String c, int v, int i){
+     Card(String s, String c, int v){
          suit = s;
          color = c;
          value = v;
-         cardID = i;
-
-        //debug
-        //System.out.println("Expected: suit, color, value" + suit + color + value);
     }
     /*
      * Getters and setters.
@@ -37,5 +33,10 @@ package vapor.sol;
     int getValue(){
         return value;
     }
-    int getCardID(){return cardID;}
+    String getImgadr(){
+        return imgadr;
+    }
+    void setImgadr(String s){
+        imgadr = s;
+    }
 }
