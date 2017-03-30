@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         right = (ImageView) findViewById(R.id.right);
 
         new_game = (Button) findViewById(R.id.new_game);
+        Button other_games = (Button) findViewById(R.id.other_games);
 
         cards = new ArrayList<>();
         cards.add(101); // Ace of spades
@@ -83,6 +84,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        other_games.setOnClickListener(new View.OnClickListener() {
+            @Override
+           public void onClick(View view) {
+                Intent myIntent = new Intent(MainActivity.this, Main2Activity.class);
+                startActivity(myIntent);
+            
+           }
+        });
+            
+        //The following is logic for the Cups game, use as reference for now
         left.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

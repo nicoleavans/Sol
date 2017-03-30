@@ -24,11 +24,30 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_game_board"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/FullscreenTheme"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="vapor.sol.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="vapor.sol.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Cups"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_cups"
+            android:parentActivityName=".Main2Activity"
+            android:theme="@style/FullscreenTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="vapor.sol.Main2Activity" />
         </activity>
     </application>
 
