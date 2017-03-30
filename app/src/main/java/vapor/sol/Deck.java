@@ -1,140 +1,119 @@
 package vapor.sol;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Random;
 
 /**
  * This method builds a 52 card deck.
  */
 
-public class Deck {
-	ArrayList<Card> pile;
+class Deck {
+    ArrayList<Card> pile;
+    final String clubs;
+    final String diamonds;
+    final String spades;
+    final String hearts;
+
     /*
      * Constructor
      */
-    public Deck() {
-        final String clubs = "clubs";
-        final String diamonds = "diamonds";
-        final String spades = "spades";
-        final String hearts = "hearts";
-        String backAdr = "";
-        Random ran = new Random();
-        //TODO handle how the back is chosen this is temp
-        //TODO implement different image handling
-        //for now the back is chosen pseudorandomly
-        int s = ran.nextInt(5);
-        if (s == 0) {
-            backAdr = "cb1.png";
-        } else if (s == 1) {
-            backAdr = "cb2.png";
-        } else if (s == 2) {
-            backAdr = "cb3.png";
-        } else if (s == 3) {
-            backAdr = "cb4.png";
-        } else if (s == 4) {
-            backAdr = "cb5.png";
-        } else {
-            backAdr = "cb6.png";
-        }
-        pile = new ArrayList<Card>();
+     Deck() {
+         clubs = "clubs";
+         diamonds = "diamonds";
+         spades = "spades";
+         hearts = "hearts";
+         pile = new ArrayList<>();
+
         //4 suits, 4 loops
         for (int i = 4; i > 0; i--) {
             //clubs
-            if (i == 4) {
-                //ints go up to thirteen to cover number and face cards
+            //ints go up to thirteen to cover number and face cards
+            if(i == 4){
                 for (int j = 1; j <= 13; j++) {
                     Card c = new Card(clubs, "black", j);
-                    //this handles assigning the images to the cards
-                    if (j == 1) {
-                        c.face.createFromPath("cluba.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 2) {
-                        c.face.createFromPath("club2.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 3) {
-                        c.face.createFromPath("club3.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 4) {
-                        c.face.createFromPath("club4.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 5) {
-                        c.face.createFromPath("club5.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 6) {
-                        c.face.createFromPath("club6.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 7) {
-                        c.face.createFromPath("club7.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 8) {
-                        c.face.createFromPath("club8.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 9) {
-                        c.face.createFromPath("club9.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 10) {
-                        c.face.createFromPath("club10.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 11) {
-                        c.face.createFromPath("clubj.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 12) {
-                        c.face.createFromPath("clubq.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 13) {
-                        c.face.createFromPath("clubk.png");
-                        c.back.createFromPath(backAdr);
-                        //debug
-                        //System.out.println("Expected color suit value "
-                        //+ c.getColor() + " " + c.getSuit() + " " + c.getValue());
-                        pile.add(c);
+                    //these values correspond to the address of their face image
+                    if(j == 1){
+                        c.setImgadr("cluba");
                     }
+                    else if(j == 2){
+                        c.setImgadr("club2");
+                    }
+                    else if(j == 3){
+                        c.setImgadr("club3");
+                    }
+                    else if(j == 4){
+                        c.setImgadr("club4");
+                    }
+                    else if(j == 5){
+                        c.setImgadr("club5");
+                    }
+                    else if(j == 6){
+                        c.setImgadr("club6");
+                    }
+                    else if(j == 7){
+                        c.setImgadr("club7");
+                    }
+                    else if(j == 8){
+                        c.setImgadr("club8");
+                    }
+                    else if(j == 9){
+                        c.setImgadr("club9");
+                    }
+                    else if(j == 10){
+                        c.setImgadr("club10");
+                    }
+                    else if(j == 11){
+                        c.setImgadr("clubj");
+                    }
+                    else if(j == 12){
+                        c.setImgadr("clubq");
+                    }
+                    else{
+                        c.setImgadr("clubk");
+                    }
+                    pile.add(c);
                 }
             }
-            //spades
             else if (i == 3) {
                 for (int j = 1; j <= 13; j++) {
                     Card c = new Card(spades, "black", j);
-
-                    if (j == 1) {
-                        c.face.createFromPath("spadea.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 2) {
-                        c.face.createFromPath("spade2.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 3) {
-                        c.face.createFromPath("spade3.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 4) {
-                        c.face.createFromPath("spade4.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 5) {
-                        c.face.createFromPath("spade5.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 6) {
-                        c.face.createFromPath("spade6.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 7) {
-                        c.face.createFromPath("spade7.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 8) {
-                        c.face.createFromPath("spade8.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 9) {
-                        c.face.createFromPath("spade9.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 10) {
-                        c.face.createFromPath("spade10.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 11) {
-                        c.face.createFromPath("spadej.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 12) {
-                        c.face.createFromPath("spadeq.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 13) {
-                        c.face.createFromPath("spadek.png");
-                        c.back.createFromPath(backAdr);
+                    if(j == 1){
+                        c.setImgadr("spadea");
+                    }
+                    else if(j == 2){
+                        c.setImgadr("spade2");
+                    }
+                    else if(j == 3){
+                        c.setImgadr("spade3");
+                    }
+                    else if(j == 4){
+                        c.setImgadr("spade4");
+                    }
+                    else if(j == 5){
+                        c.setImgadr("spade5");
+                    }
+                    else if(j == 6){
+                        c.setImgadr("spade6");
+                    }
+                    else if(j == 7){
+                        c.setImgadr("spade7");
+                    }
+                    else if(j == 8){
+                        c.setImgadr("spade8");
+                    }
+                    else if(j == 9){
+                        c.setImgadr("spade9");
+                    }
+                    else if(j == 10){
+                        c.setImgadr("spade10");
+                    }
+                    else if(j == 11){
+                        c.setImgadr("spadej");
+                    }
+                    else if(j == 12){
+                        c.setImgadr("spadeq");
+                    }
+                    else{
+                        c.setImgadr("spadek");
                     }
                     pile.add(c);
                 }
@@ -143,112 +122,97 @@ public class Deck {
             else if (i == 2) {
                 for (int j = 1; j <= 13; j++) {
                     Card c = new Card(hearts, "red", j);
-                    if (j == 1) {
-                        c.face.createFromPath("hearta.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 2) {
-                        c.face.createFromPath("heart2.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 3) {
-                        c.face.createFromPath("heart3.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 4) {
-                        c.face.createFromPath("heart4.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 5) {
-                        c.face.createFromPath("heart5.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 6) {
-                        c.face.createFromPath("heart6.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 7) {
-                        c.face.createFromPath("heart7.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 8) {
-                        c.face.createFromPath("heart8.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 9) {
-                        c.face.createFromPath("heart9.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 10) {
-                        c.face.createFromPath("heart10.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 11) {
-                        c.face.createFromPath("heartj.png");
-                        c.back.createFromPath(backAdr);
-                    } else if (j == 12) {
-                        c.face.createFromPath("heartq.png");
-                        c.back.createFromPath(backAdr);
+                    if(j == 1){
+                        c.setImgadr("hearta");
                     }
-                    c.face.createFromPath("heartk.png");
-                    c.back.createFromPath(backAdr);
-
+                    else if(j == 2){
+                        c.setImgadr("heart2");
+                    }
+                    else if(j == 3){
+                        c.setImgadr("heart3");
+                    }
+                    else if(j == 4){
+                        c.setImgadr("heart4");
+                    }
+                    else if(j == 5){
+                        c.setImgadr("heart5");
+                    }
+                    else if(j == 6){
+                        c.setImgadr("heart6");
+                    }
+                    else if(j == 7){
+                        c.setImgadr("heart7");
+                    }
+                    else if(j == 8){
+                        c.setImgadr("heart8");
+                    }
+                    else if(j == 9){
+                        c.setImgadr("heart9");
+                    }
+                    else if(j == 10){
+                        c.setImgadr("heart10");
+                    }
+                    else if(j == 11){
+                        c.setImgadr("heartj");
+                    }
+                    else if(j == 12){
+                        c.setImgadr("heartq");
+                    }
+                    else{
+                        c.setImgadr("heartk");
+                    }
                     pile.add(c);
                 }
             }
-          //diamonds
-          else if(i == 1){
-            for(int j = 1; j <= 13; j++){
-              Card c = new Card(diamonds, "red", j);
-              if(j == 1){
-                  c.face.createFromPath("diamonda.png");
-                  c.back.createFromPath(backAdr);
-              }
-              else if(j == 2){
-                  c.face.createFromPath("diamond2.png");
-                  c.back.createFromPath(backAdr);
-              }
-              else if(j == 3){
-                  c.face.createFromPath("diamond3.png");
-                  c.back.createFromPath(backAdr);
-              }
-              else if(j == 4){
-                  c.face.createFromPath("diamond4.png");
-                  c.back.createFromPath(backAdr);
-              }
-              else if(j == 5){
-                  c.face.createFromPath("diamond5.png");
-                  c.back.createFromPath(backAdr);
-              }
-              else if(j == 6){
-                  c.face.createFromPath("diamond6.png");
-                  c.back.createFromPath(backAdr);
-              }
-              else if(j == 7){
-                  c.face.createFromPath("diamond7.png");
-                  c.back.createFromPath(backAdr);
-              }
-              else if(j == 8){
-                  c.face.createFromPath("diamond8.png");
-                  c.back.createFromPath(backAdr);
-              }
-              else if(j == 9){
-                  c.face.createFromPath("diamond9.png");
-                  c.back.createFromPath(backAdr);
-              }
-              else if(j == 10){
-                  c.face.createFromPath("diamond10.png");
-                  c.back.createFromPath(backAdr);
-              }
-              else if(j == 11){
-                  c.face.createFromPath("diamondj.png");
-                  c.back.createFromPath(backAdr);
-              }
-              else if(j == 12){
-                  c.face.createFromPath("diamondq.png");
-                  c.back.createFromPath(backAdr);
-              }
-              else if(j == 13){
-                  c.face.createFromPath("diamondk.png");
-                  c.back.createFromPath(backAdr);
-              }
-              pile.add(c);
+            //diamonds
+            else if(i == 1){
+                for(int j = 1; j <= 13; j++){
+                    Card c = new Card(diamonds, "red", j);
+                    if(j == 1){
+                        c.setImgadr("diamonda");
+                    }
+                    else if(j == 2){
+                        c.setImgadr("diamond2");
+                    }
+                    else if(j == 3){
+                        c.setImgadr("diamond3");
+                    }
+                    else if(j == 4){
+                        c.setImgadr("diamond4");
+                    }
+                    else if(j == 5){
+                        c.setImgadr("diamond5");
+                    }
+                    else if(j == 6){
+                        c.setImgadr("diamond6");
+                    }
+                    else if(j == 7){
+                        c.setImgadr("diamond7");
+                    }
+                    else if(j == 8){
+                        c.setImgadr("diamond8");
+                    }
+                    else if(j == 9){
+                        c.setImgadr("diamond9");
+                    }
+                    else if(j == 10){
+                        c.setImgadr("diamond10");
+                    }
+                    else if(j == 11){
+                        c.setImgadr("diamondj");
+                    }
+                    else if(j == 12){
+                        c.setImgadr("diamondq");
+                    }
+                    else{
+                        c.setImgadr("diamondk");
+                    }
+                    pile.add(c);
+                }
             }
-          }
         }
-        //should theoretically shuffle the deck after making it
+        //shuffles the deck after making it
         Collections.shuffle(pile);
-        //debug
-        //System.out.println(pile);
+
     }
 }
