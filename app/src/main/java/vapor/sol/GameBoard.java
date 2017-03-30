@@ -1,7 +1,6 @@
 package vapor.sol;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +19,10 @@ import android.widget.ImageView;
  */
 public class GameBoard extends AppCompatActivity {
 
+    /*
+     * instance variables
+     */
+
     ImageView drawPile, pile7_1, pile7_2, pile7_3, pile7_4, pile7_5, pile7_6, pile7_7,
             pile6_1, pile6_2, pile6_3, pile6_4, pile6_5, pile6_6,
             pile5_1, pile5_2, pile5_3, pile5_4, pile5_5,
@@ -27,6 +30,23 @@ public class GameBoard extends AppCompatActivity {
             pile3_1, pile3_2, pile3_3,
             pile2_1, pile2_2,
             pile1_1;
+
+    Deck d;
+    SuitPile hearts;
+    SuitPile spades;
+    SuitPile diamonds;
+    SuitPile clubs;
+
+    PlayPile one;
+    PlayPile two;
+    PlayPile three;
+    PlayPile four;
+    PlayPile five;
+    PlayPile six;
+    PlayPile seven;
+
+    DrawPile draw;
+
 
     /**
      * Whether or not the system UI should be auto-hidden after
@@ -98,6 +118,10 @@ public class GameBoard extends AppCompatActivity {
         }
     };
 
+    /*
+     * JUMP HERE
+     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,6 +149,52 @@ public class GameBoard extends AppCompatActivity {
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
         findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
+
+        //instantiate things
+        d = new Deck();
+
+        hearts = new SuitPile(d.hearts);
+        spades = new SuitPile(d.spades);
+        diamonds = new SuitPile(d.diamonds);
+        clubs = new SuitPile(d.clubs);
+
+        one = new PlayPile();
+        two = new PlayPile();
+        three = new PlayPile();
+        four = new PlayPile();
+        five = new PlayPile();
+        six = new PlayPile();
+        seven = new PlayPile();
+
+        draw = new DrawPile();
+
+        /*
+         * TODO sync up with image view assignment
+         * I think this is correct but testing needs to happen
+         */
+        for(int i = 0; i < 52; i++){
+            if(i > 20 && i < 28){
+                seven.pile.push(d.pile.get(i));
+            }
+            else if(i > 14 && i < 21){
+                six.pile.push(d.pile.get(i));
+            }
+            else if(i > 9 && i < 15){
+                five.pile.push(d.pile.get(i));
+            }
+            else if(i > 5 && i < 10){
+                four.pile.push(d.pile.get(i));
+            }
+            else if(i > 2 && i < 6){
+                three.pile.push(d.pile.get(i));
+            }
+            else if(i == 1 || i == 2){
+                two.pile.push(d.pile.get(i));
+            }
+            else if(i == 0){
+                one.pile.push(d.pile.get(i));
+            }
+        }
 
         drawPile = (ImageView) findViewById(R.id.drawPile);
         pile7_1 = (ImageView) findViewById(R.id.pile7_1);
@@ -575,57 +645,184 @@ public class GameBoard extends AppCompatActivity {
             }
         });
 
-        final String cl = "clubs";
-        final String di = "diamonds";
-        final String sp = "spades";
-        final String he = "hearts";
+        pile7_1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                //TODO Look at this! I think it may solve our problems. I need to get better at click listeners but hype
+                pile7_1.setImageResource(getResources().getIdentifier(d.pile.get(0).getImgadr(), "drawable", getPackageName()));
+            }
+        });
+        pile7_2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile7_2.setImageResource(getResources().getIdentifier(d.pile.get(1).getImgadr(), "drawable", getPackageName()));
+            }
+        });
+        pile7_3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile7_3.setImageResource(getResources().getIdentifier(d.pile.get(2).getImgadr(), "drawable", getPackageName()));
+            }
+        });
+        pile7_4.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile7_4.setImageResource(getResources().getIdentifier(d.pile.get(3).getImgadr(), "drawable", getPackageName()));
+            }
+        });
+        pile7_5.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile7_5.setImageResource(getResources().getIdentifier(d.pile.get(4).getImgadr(), "drawable", getPackageName()));
+            }
+        });
+        pile7_6.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile7_6.setImageResource(getResources().getIdentifier(d.pile.get(5).getImgadr(), "drawable", getPackageName()));
+            }
+        });
+        pile7_7.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile7_7.setImageResource(getResources().getIdentifier(d.pile.get(6).getImgadr(), "drawable", getPackageName()));
+            }
+        });
 
-        SuitPile hearts = new SuitPile(he);
-        SuitPile spades = new SuitPile(sp);
-        SuitPile diamonds = new SuitPile(di);
-        SuitPile clubs = new SuitPile(cl);
+        pile6_1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile6_1.setImageResource(getResources().getIdentifier(d.pile.get(7).getImgadr(), "drawable", getPackageName()));
+            }
+        });
+        pile6_2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile6_2.setImageResource(getResources().getIdentifier(d.pile.get(8).getImgadr(), "drawable", getPackageName()));
+            }
+        });
+        pile6_3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile6_3.setImageResource(getResources().getIdentifier(d.pile.get(9).getImgadr(), "drawable", getPackageName()));
+            }
+        });
+        pile6_4.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile6_4.setImageResource(getResources().getIdentifier(d.pile.get(10).getImgadr(), "drawable", getPackageName()));
+            }
+        });
+        pile6_5.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile6_5.setImageResource(getResources().getIdentifier(d.pile.get(11).getImgadr(), "drawable", getPackageName()));
+            }
+        });
+        pile6_6.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile6_6.setImageResource(getResources().getIdentifier(d.pile.get(12).getImgadr(), "drawable", getPackageName()));
+            }
+        });
 
-        PlayPile one = new PlayPile();
-        PlayPile two = new PlayPile();
-        PlayPile three = new PlayPile();
-        PlayPile four = new PlayPile();
-        PlayPile five = new PlayPile();
-        PlayPile six = new PlayPile();
-        PlayPile seven = new PlayPile();
+        pile5_1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile5_1.setImageResource(getResources().getIdentifier(d.pile.get(13).getImgadr(), "drawable", getPackageName()));
+            }
+        });
+        pile5_2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile5_2.setImageResource(getResources().getIdentifier(d.pile.get(14).getImgadr(), "drawable", getPackageName()));
+            }
+        });
+        pile5_3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile5_3.setImageResource(getResources().getIdentifier(d.pile.get(15).getImgadr(), "drawable", getPackageName()));
+            }
+        });
+        pile5_4.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile5_4.setImageResource(getResources().getIdentifier(d.pile.get(16).getImgadr(), "drawable", getPackageName()));
+            }
+        });
+        pile5_5.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile5_5.setImageResource(getResources().getIdentifier(d.pile.get(17).getImgadr(), "drawable", getPackageName()));
+            }
+        });
 
-        DrawPile draw = new DrawPile();
+        pile4_1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile4_1.setImageResource(getResources().getIdentifier(d.pile.get(18).getImgadr(), "drawable", getPackageName()));
+            }
+        });
+        pile4_2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile4_2.setImageResource(getResources().getIdentifier(d.pile.get(19).getImgadr(), "drawable", getPackageName()));
+            }
+        });
+        pile4_3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile4_3.setImageResource(getResources().getIdentifier(d.pile.get(20).getImgadr(), "drawable", getPackageName()));
+            }
+        });
+        pile4_4.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile4_4.setImageResource(getResources().getIdentifier(d.pile.get(21).getImgadr(), "drawable", getPackageName()));
+            }
+        });
 
-        Deck d = new Deck();
-        //this populates the play spaces.
-        //probably a little clumsy, but it seems functional to me
-        for(int i = 0; i < 52; i++){
-            if(i == 0){
-                one.pile.push(d.pile.get(i));
+        pile3_1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile3_1.setImageResource(getResources().getIdentifier(d.pile.get(22).getImgadr(), "drawable", getPackageName()));
             }
-            else if(i == 1 || i == 2){
-                two.pile.push(d.pile.get(i));
+        });
+        pile3_2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile3_2.setImageResource(getResources().getIdentifier(d.pile.get(23).getImgadr(), "drawable", getPackageName()));
             }
-            else if(i > 2 && i < 6){
-                three.pile.push(d.pile.get(i));
+        });
+        pile3_3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile3_3.setImageResource(getResources().getIdentifier(d.pile.get(24).getImgadr(), "drawable", getPackageName()));
             }
-            else if(i > 5 && i < 10){
-                four.pile.push(d.pile.get(i));
+        });
+
+        pile2_1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile2_1.setImageResource(getResources().getIdentifier(d.pile.get(25).getImgadr(), "drawable", getPackageName()));
             }
-            else if(i > 9 && i < 15){
-                five.pile.push(d.pile.get(i));
+        });
+        pile2_2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile2_2.setImageResource(getResources().getIdentifier(d.pile.get(26).getImgadr(), "drawable", getPackageName()));
             }
-            else if(i > 14 && i < 21){
-                six.pile.push(d.pile.get(i));
+        });
+
+        pile1_1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                pile1_1.setImageResource(getResources().getIdentifier(d.pile.get(27).getImgadr(), "drawable", getPackageName()));
             }
-            else if(i > 20 && i < 28){
-                seven.pile.push(d.pile.get(i));
-            }
-            else{
-                draw.q.add(d.pile.get(i));
-            }
-        }
+        });
 
     }
+
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
