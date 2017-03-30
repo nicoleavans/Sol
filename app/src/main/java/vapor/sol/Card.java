@@ -1,78 +1,42 @@
 package vapor.sol;
-//TODO implement something besides bufferedimage since android doesn't support it
-//import java.awt.image.BufferedImage;
-//import java.io.File;
-//import java.io.IOException;
-
-//import javax.imageio.ImageIO;
-
-import android.graphics.drawable.BitmapDrawable;
-
 /**
  * This class stores necessary information about cards. Possibly we could phase out color in favor of suit and
  * just add a bit where it checks the suit to determine color? unsure how relevant it really is
  */
 
-public class Card {
+ class Card {
     //initial variables
     private String suit;
     private String color;
     private int value;
-    private boolean faceUp;
-    BitmapDrawable face;
-    BitmapDrawable back;
-    BitmapDrawable visibleSide;
+    private String imgadr;
     /*
      * Constructor
      * @param s  suit
      * @param c  color
      * @param v  value
      */
-    public Card(String s, String c, int v){
-        suit = s;
-        color = c;
-        value = v;
-        face = null;
-        back = null;
-        //visible will default to the back side
-        faceUp = false;
-        visibleSide = back;
-        //debug
-        //System.out.println("Expected: suit, color, value" + suit + color + value);
+     Card(String s, String c, int v){
+         suit = s;
+         color = c;
+         value = v;
     }
     /*
      * Getters and setters.
      */
-    public String getSuit(){
+    String getSuit(){
         return suit;
     }
-    public void setSuit(String s){
-        suit = s;
-    }
-    public String getColor(){
+    String getColor(){
         return color;
     }
-    public void setColor(String s){
-        color = s;
-    }
-    public int getValue(){
+    int getValue(){
         return value;
     }
-    public void setValue(int v){
-        value = v;
+    String getImgadr(){
+        return imgadr;
     }
-    /*
-     * This method alternates a value saved as visible side between
-     * the images for the front and back, to be used for UI support.
-     */
-    public void flipCard(){
-      if(faceUp){
-        faceUp = false;
-        visibleSide = back;
-      }
-      else{
-        faceUp = true;
-        visibleSide = face;
-      }
+    void setImgadr(String s){
+        imgadr = s;
     }
 }
