@@ -42,6 +42,13 @@
         android:text="NEW GAME"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:id="@+id/other_games"
+        android:layout_marginTop="20dp"
+        android:layout_width="40dp"
+        android:text="!"
+        android:layout_height="wrap_content" />
+
 
 
 
