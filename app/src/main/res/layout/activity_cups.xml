@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:keepScreenOn="true"
-        android:text="Cups"
+        android:text=""
         android:textColor="#33b5e5"
         android:textSize="50sp"
         android:textStyle="bold" />
@@ -23,28 +23,30 @@
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="60dp"
+        android:keepScreenOn="false"
+        android:src="@drawable/cb4" />
 
         <ImageView
-            android:id="@+id/left"
+            android:layout_width="60dp"
+            android:layout_height="100dp"
+            android:layout_margin="60dp"
+            android:keepScreenOn="false"
+            android:src="@drawable/cb4" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="100dp"
             android:layout_marginRight="60dp"
-            android:layout_width="60dp"
-            android:layout_height="100dp"
-            android:src="@drawable/cb4"/>
-        <ImageView
-            android:id="@+id/middle"
-            android:layout_width="60dp"
-            android:layout_height="100dp"
-            android:src="@drawable/cb4"/>
-        <ImageView
-            android:id="@+id/right"
-            android:layout_marginLeft="60dp"
-            android:layout_width="60dp"
-            android:layout_height="100dp"
-            android:src="@drawable/cb4"/>
+            android:keepScreenOn="false"
+            android:src="@drawable/cb4" />
 
     </LinearLayout>
-
 
 
     <!-- This FrameLayout insets its children based on system windows using
@@ -70,7 +72,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/dummy_button" />
+                android:text="@string/hint" />
 
         </LinearLayout>
     </FrameLayout>

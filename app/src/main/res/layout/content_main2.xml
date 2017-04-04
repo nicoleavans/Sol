@@ -4,8 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/background_dark"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="vapor.sol.Main2Activity"
     tools:showIn="@layout/app_bar_main2">
+
+    <TextView
+        android:id="@+id/about_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|top"
+        android:layout_marginTop="80dp"
+        android:keepScreenOn="true"
+        android:text="@string/about_text"
+        android:textColor="#00FFFF"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/development_team"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="175dp"
+        android:gravity="center|top"
+        android:keepScreenOn="true"
+        android:text="Development Team"
+        android:textColor="#8470FF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:gravity="center|top"
+        android:keepScreenOn="true"
+        android:text="A Little Bit About Us"
+        android:textColor="#AB82FF"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:keepScreenOn="true"
+        android:textColor="#8470FF"
+        android:textSize="30sp"
+        android:textStyle="bold">
+
+        <ImageView
+            android:id="@+id/Corey"
+            android:layout_marginRight="20dp"
+            android:layout_width="60dp"
+            android:layout_height="100dp"
+            android:src="@drawable/cb4"/>
+        <ImageView
+            android:id="@+id/David"
+            android:layout_width="60dp"
+            android:layout_height="100dp"
+            android:src="@drawable/cb6"/>
+        <ImageView
+            android:id="@+id/Kaleb"
+            android:layout_marginLeft="20dp"
+            android:layout_width="60dp"
+            android:layout_height="100dp"
+            android:src="@drawable/cb1"/>
+        <ImageView
+            android:id="@+id/Nicole"
+            android:layout_marginLeft="20dp"
+            android:layout_width="60dp"
+            android:layout_height="100dp"
+            android:src="@drawable/cb5"/>
+
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
