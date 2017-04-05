@@ -1,6 +1,7 @@
 package vapor.sol;
 
 import android.annotation.SuppressLint;
+import android.content.ClipData;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -131,7 +132,6 @@ public class GameBoard extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-
         mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
         mContentView = findViewById(R.id.fullscreen_content);
@@ -169,7 +169,6 @@ public class GameBoard extends AppCompatActivity {
         draw = new DrawPile();
 
         /*
-         * TODO sync up with image view assignment
          * I think this is correct but testing needs to happen
          */
         for(int i = 0; i < 52; i++){
@@ -814,10 +813,32 @@ public class GameBoard extends AppCompatActivity {
             }
         });
 
+        /*
         pile1_1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 pile1_1.setImageResource(getResources().getIdentifier(d.pile.get(27).getImgadr(), "drawable", getPackageName()));
+            }
+        });
+        */
+
+        pile1_1.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent motionEvent) {
+                pile1_1.setImageResource(getResources().getIdentifier(d.pile.get(27).getImgadr(), "drawable", getPackageName()));
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    ClipData clipData = ClipData.newPlainText("","");
+                    View.DragShadowBuilder dsb = new View.DragShadowBuilder(pile1_1);
+                    //this is deprecated, it could be startDragAndDrop probably
+                    pile1_1.startDrag(clipData, dsb, pile1_1, 0);
+                    pile1_1.setVisibility(View.INVISIBLE);
+                    return true;
+                }
+                else{
+                    return false;
+                }
+                //this could later be adapted to not allowing something to happen
+                //return false;
             }
         });
 
