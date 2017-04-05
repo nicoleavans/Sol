@@ -800,27 +800,33 @@ public class GameBoard extends AppCompatActivity {
             }
         });
 
+
         pile2_1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 pile2_1.setImageResource(getResources().getIdentifier(d.pile.get(25).getImgadr(), "drawable", getPackageName()));
             }
         });
-        pile2_2.setOnClickListener(new View.OnClickListener(){
+        pile2_2.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view){
+            public boolean onTouch(View v, MotionEvent motionEvent) {
                 pile2_2.setImageResource(getResources().getIdentifier(d.pile.get(26).getImgadr(), "drawable", getPackageName()));
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    ClipData clipData = ClipData.newPlainText("","");
+                    View.DragShadowBuilder dsb = new View.DragShadowBuilder(pile2_2);
+                    //this is deprecated, it could be startDragAndDrop probably
+                    pile2_2.startDrag(clipData, dsb, pile2_2, 0);
+                    pile2_2.setVisibility(View.INVISIBLE);
+                    return true;
+                }
+                else{
+                    return false;
+                }
+                //this could later be adapted to not allowing something to happen
+                //return false;
             }
         });
 
-        /*
-        pile1_1.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                pile1_1.setImageResource(getResources().getIdentifier(d.pile.get(27).getImgadr(), "drawable", getPackageName()));
-            }
-        });
-        */
 
         pile1_1.setOnTouchListener(new View.OnTouchListener() {
             @Override
