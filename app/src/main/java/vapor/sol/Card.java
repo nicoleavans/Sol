@@ -10,6 +10,7 @@ package vapor.sol;
     private String color;
     private int value;
     private String imgadr;
+    private boolean up;
     /*
      * Constructor
      * @param s  suit
@@ -20,6 +21,7 @@ package vapor.sol;
          suit = s;
          color = c;
          value = v;
+         up = false;
     }
     /*
      * Getters and setters.
@@ -38,5 +40,11 @@ package vapor.sol;
     }
     void setImgadr(String s){
         imgadr = s;
+    }
+    boolean getUp(){
+        return up;
+    }
+    void setUp(boolean b){
+        up = b;
     }
 }
