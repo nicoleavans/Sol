@@ -26,6 +26,7 @@
         android:layout_height="match_parent">
 
     <ImageView
+        android:id="@+id/left1"
         android:layout_width="60dp"
         android:layout_height="100dp"
         android:layout_marginLeft="60dp"
@@ -33,6 +34,7 @@
         android:src="@drawable/cb4" />
 
         <ImageView
+            android:id="@+id/middle1"
             android:layout_width="60dp"
             android:layout_height="100dp"
             android:layout_margin="60dp"
@@ -40,6 +42,7 @@
             android:src="@drawable/cb4" />
 
         <ImageView
+            android:id="@+id/right1"
             android:layout_width="60dp"
             android:layout_height="100dp"
             android:layout_marginRight="60dp"
@@ -75,6 +78,15 @@
                 android:text="@string/hint" />
 
         </LinearLayout>
+
+        <Button
+            android:id="@+id/new_game1"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:layout_width="200dp"
+            android:text="NEW GAME"
+            android:layout_height="wrap_content" />
+
     </FrameLayout>
 
 </FrameLayout>

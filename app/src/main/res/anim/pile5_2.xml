@@ -7,5 +7,5 @@
         android:repeatCount="0"
         android:toXDelta="630%"
         android:fromYDelta="0%"
-        android:toYDelta="110%"/>
+        android:toYDelta="120%"/>
 </set>
