@@ -36,7 +36,7 @@ import java.util.Stack;
        else if(!pile.empty()){
          val = pile.peek();
          //if the current value on the pile is one less than the card to be added
-         if(val.getValue() == c.getValue() + 1){
+         if(val.getValue() == c.getValue() - 1){
            pile.add(d.q.remove());
          }
        }
