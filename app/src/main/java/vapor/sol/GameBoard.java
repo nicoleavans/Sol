@@ -17,6 +17,7 @@ import android.widget.ImageView;
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
+ * TODO add win condition
  */
 public class GameBoard extends AppCompatActivity {
 
@@ -170,7 +171,9 @@ public class GameBoard extends AppCompatActivity {
 
         /*
          * I think this is correct but testing needs to happen
+         * TODO VERIFY
          */
+
         for(int i = 0; i < 52; i++){
             if(i > 20 && i < 28){
                 seven.pile.push(d.pile.get(i));
@@ -191,9 +194,20 @@ public class GameBoard extends AppCompatActivity {
                 two.pile.push(d.pile.get(i));
             }
             else if(i == 0){
-                one.pile.push(d.pile.get(i));
+                Card x = d.pile.get(i);
+                //every card in the draw pile will count as uncovered
+                x.turnUp();
+                one.pile.push(x);
             }
         }
+        //this uncovers the top of every pile
+        seven.pile.peek().turnUp();
+        six.pile.peek().turnUp();
+        five.pile.peek().turnUp();
+        four.pile.peek().turnUp();
+        three.pile.peek().turnUp();
+        two.pile.peek().turnUp();
+        one.pile.peek().turnUp();
 
         drawPile = (ImageView) findViewById(R.id.drawPile);
         pile7_1 = (ImageView) findViewById(R.id.pile7_1);
@@ -926,4 +940,7 @@ public class GameBoard extends AppCompatActivity {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
     }
+
+    //TODO maybe delete
+
 }

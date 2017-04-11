@@ -44,7 +44,7 @@ package vapor.sol;
     boolean getUp(){
         return up;
     }
-    void setUp(boolean b){
-        up = b;
+    void turnUp(){
+        up = true;
     }
 }
