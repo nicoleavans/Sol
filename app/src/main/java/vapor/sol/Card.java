@@ -47,4 +47,47 @@ package vapor.sol;
     void turnUp(){
         up = true;
     }
+    //this adds in symbols to aid the toString()
+    String toSymbol(){
+        String temp = this.getSuit();
+        String r;
+        if(temp == "spades"){
+            r = "♠";
+        }
+        else if(temp == "diamonds"){
+            r = "♦";
+        }
+        else if(temp == "hearts"){
+            r = "♥";
+        }
+        else{
+            r = "♣";
+        }
+        return r;
+    }
+    //edited to string
+    public String toString(){
+        int v = this.value;
+        String val;
+        String s;
+        if(v > 10){
+            if(v == 11){
+                val = "J";
+            }
+            else if(v == 12){
+                val = "Q";
+            }
+            else{
+                val = "K";
+            }
+            s = " " + val + " " + this.toSymbol();
+        }
+        else if(v == 1){
+            s = " A " + this.toSymbol();
+        }
+        else{
+            s = " " + this.value + " " + this.toSymbol();
+        }
+        return s;
+    }
 }
