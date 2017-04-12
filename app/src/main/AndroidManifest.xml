@@ -49,6 +49,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="vapor.sol.Main2Activity" />
         </activity>
+        <activity
+            android:name=".Sol_lite"
+            android:label="@string/title_activity_sol_lite"
+            android:parentActivityName=".Main2Activity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="vapor.sol.Main2Activity" />
+        </activity>
     </application>
 
 </manifest>

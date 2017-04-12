@@ -26,11 +26,11 @@ import java.util.List;
  */
 public class Cups extends AppCompatActivity {
 
-    ImageView left, middle, right;
+    ImageView left1, middle1, right1;
 
-    Button new_game;
+    Button new_game1;
 
-    List<Integer> cards;
+    List<Integer> cards1;
 
     /**
      * Whether or not the system UI should be auto-hidden after
@@ -131,117 +131,136 @@ public class Cups extends AppCompatActivity {
         findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
 
 
-        left = (ImageView) findViewById(R.id.left);
-        middle = (ImageView) findViewById(R.id.middle);
-        right = (ImageView) findViewById(R.id.right);
+        left1 = (ImageView) findViewById(R.id.left1);
+        middle1 = (ImageView) findViewById(R.id.middle1);
+        right1 = (ImageView) findViewById(R.id.right1);
 
-        new_game = (Button) findViewById(R.id.new_game);
-        Button other_games = (Button) findViewById(R.id.other_games);
+        new_game1 = (Button) findViewById(R.id.new_game1);
 
-        cards = new ArrayList<>();
-        cards.add(101); // Ace of spades
-        cards.add(208); // 8 of hearts
-        cards.add(408); // 8 of diamonds
+        cards1 = new ArrayList<>();
+        cards1.add(101); // Ace of spades
+        cards1.add(208); // 8 of hearts
+        cards1.add(408); // 8 of diamonds
 
         // shuffle the cards
-        Collections.shuffle(cards);
+        Collections.shuffle(cards1);
 
-        //The following is logic for the Cups game, use as reference for now
-        left.setOnClickListener(new View.OnClickListener() {
+        new_game1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // shuffle the cards
+                Collections.shuffle(cards1);
+
+                left1.setImageResource(R.drawable.cb4);
+                middle1.setImageResource(R.drawable.cb4);
+                right1.setImageResource(R.drawable.cb4);
+
+                Animation anim_left1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.left1);
+                Animation anim_middle1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.middle1);
+                Animation anim_right1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.right1);
+
+                left1.startAnimation(anim_left1);
+                middle1.startAnimation(anim_middle1);
+                right1.startAnimation(anim_right1);
+
+
+            }
+        });
+
+        left1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // assign images
-                if (cards.get(0) == 101) {
-                    left.setImageResource(R.drawable.spadea);
+                if (cards1.get(0) == 101) {
+                    left1.setImageResource(R.drawable.spadea);
                     Toast.makeText(Cups.this, "Winner!", Toast.LENGTH_SHORT).show();
-                } else if (cards.get(0) == 208) {
-                    left.setImageResource(R.drawable.heart8);
-                } else if (cards.get(0) == 408) {
-                    left.setImageResource(R.drawable.diamond8);
+                } else if (cards1.get(0) == 208) {
+                    left1.setImageResource(R.drawable.heart8);
+                } else if (cards1.get(0) == 408) {
+                    left1.setImageResource(R.drawable.diamond8);
                 }
 
-                if (cards.get(1) == 101) {
-                    middle.setImageResource(R.drawable.spadea);
-                } else if (cards.get(1) == 208) {
-                    middle.setImageResource(R.drawable.heart8);
-                } else if (cards.get(1) == 408) {
-                    middle.setImageResource(R.drawable.diamond8);
+                if (cards1.get(1) == 101) {
+                    middle1.setImageResource(R.drawable.spadea);
+                } else if (cards1.get(1) == 208) {
+                    middle1.setImageResource(R.drawable.heart8);
+                } else if (cards1.get(1) == 408) {
+                    middle1.setImageResource(R.drawable.diamond8);
                 }
 
-                if (cards.get(2) == 101) {
-                    right.setImageResource(R.drawable.spadea);
-                } else if (cards.get(2) == 208) {
-                    right.setImageResource(R.drawable.heart8);
-                } else if (cards.get(2) == 408) {
-                    right.setImageResource(R.drawable.diamond8);
+                if (cards1.get(2) == 101) {
+                    right1.setImageResource(R.drawable.spadea);
+                } else if (cards1.get(2) == 208) {
+                    right1.setImageResource(R.drawable.heart8);
+                } else if (cards1.get(2) == 408) {
+                    right1.setImageResource(R.drawable.diamond8);
                 }
 
             }
         });
 
-        middle.setOnClickListener(new View.OnClickListener() {
+        middle1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // assign images
-                if (cards.get(1) == 101) {
-                    middle.setImageResource(R.drawable.spadea);
+                if (cards1.get(1) == 101) {
+                    middle1.setImageResource(R.drawable.spadea);
                     Toast.makeText(Cups.this, "Winner!", Toast.LENGTH_SHORT).show();
-                } else if (cards.get(1) == 208) {
-                    middle.setImageResource(R.drawable.heart8);
-                } else if (cards.get(1) == 408) {
-                    middle.setImageResource(R.drawable.diamond8);
+                } else if (cards1.get(1) == 208) {
+                    middle1.setImageResource(R.drawable.heart8);
+                } else if (cards1.get(1) == 408) {
+                    middle1.setImageResource(R.drawable.diamond8);
                 }
 
-                if (cards.get(0) == 101) {
-                    left.setImageResource(R.drawable.spadea);
-                } else if (cards.get(0) == 208) {
-                    left.setImageResource(R.drawable.heart8);
-                } else if (cards.get(0) == 408) {
-                    left.setImageResource(R.drawable.diamond8);
+                if (cards1.get(0) == 101) {
+                    left1.setImageResource(R.drawable.spadea);
+                } else if (cards1.get(0) == 208) {
+                    left1.setImageResource(R.drawable.heart8);
+                } else if (cards1.get(0) == 408) {
+                    left1.setImageResource(R.drawable.diamond8);
                 }
 
-                if (cards.get(2) == 101) {
-                    right.setImageResource(R.drawable.spadea);
-                } else if (cards.get(2) == 208) {
-                    right.setImageResource(R.drawable.heart8);
-                } else if (cards.get(2) == 408) {
-                    right.setImageResource(R.drawable.diamond8);
+                if (cards1.get(2) == 101) {
+                    right1.setImageResource(R.drawable.spadea);
+                } else if (cards1.get(2) == 208) {
+                    right1.setImageResource(R.drawable.heart8);
+                } else if (cards1.get(2) == 408) {
+                    right1.setImageResource(R.drawable.diamond8);
                 }
             }
         });
 
-        right.setOnClickListener(new View.OnClickListener() {
+        right1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // assign images
-                if (cards.get(2) == 101) {
-                    right.setImageResource(R.drawable.spadea);
+                if (cards1.get(2) == 101) {
+                    right1.setImageResource(R.drawable.spadea);
                     Toast.makeText(Cups.this, "Winner!", Toast.LENGTH_SHORT).show();
-                } else if (cards.get(2) == 208) {
-                    right.setImageResource(R.drawable.heart8);
-                } else if (cards.get(2) == 408) {
-                    right.setImageResource(R.drawable.diamond8);
+                } else if (cards1.get(2) == 208) {
+                    right1.setImageResource(R.drawable.heart8);
+                } else if (cards1.get(2) == 408) {
+                    right1.setImageResource(R.drawable.diamond8);
                 }
 
-                if (cards.get(0) == 101) {
-                    left.setImageResource(R.drawable.spadea);
-                } else if (cards.get(0) == 208) {
-                    left.setImageResource(R.drawable.heart8);
-                } else if (cards.get(0) == 408) {
-                    left.setImageResource(R.drawable.diamond8);
+                if (cards1.get(0) == 101) {
+                    left1.setImageResource(R.drawable.spadea);
+                } else if (cards1.get(0) == 208) {
+                    left1.setImageResource(R.drawable.heart8);
+                } else if (cards1.get(0) == 408) {
+                    left1.setImageResource(R.drawable.diamond8);
                 }
 
-                if (cards.get(1) == 101) {
-                    middle.setImageResource(R.drawable.spadea);
-                } else if (cards.get(1) == 208) {
-                    middle.setImageResource(R.drawable.heart8);
-                } else if (cards.get(1) == 408) {
-                    middle.setImageResource(R.drawable.diamond8);
+                if (cards1.get(1) == 101) {
+                    middle1.setImageResource(R.drawable.spadea);
+                } else if (cards1.get(1) == 208) {
+                    middle1.setImageResource(R.drawable.heart8);
+                } else if (cards1.get(1) == 408) {
+                    middle1.setImageResource(R.drawable.diamond8);
                 }
 
             }
         });
-
 
     }
 
