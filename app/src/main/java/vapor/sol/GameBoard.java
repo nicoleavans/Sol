@@ -17,6 +17,7 @@ import android.widget.ImageView;
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
+ * TODO add win condition
  */
 public class GameBoard extends AppCompatActivity {
 
@@ -170,7 +171,9 @@ public class GameBoard extends AppCompatActivity {
 
         /*
          * I think this is correct but testing needs to happen
+         * TODO VERIFY
          */
+
         for(int i = 0; i < 52; i++){
             if(i > 20 && i < 28){
                 seven.pile.push(d.pile.get(i));
@@ -191,9 +194,20 @@ public class GameBoard extends AppCompatActivity {
                 two.pile.push(d.pile.get(i));
             }
             else if(i == 0){
-                one.pile.push(d.pile.get(i));
+                Card x = d.pile.get(i);
+                //every card in the draw pile will count as uncovered
+                x.turnUp();
+                one.pile.push(x);
             }
         }
+        //this uncovers the top of every pile
+        seven.pile.peek().turnUp();
+        six.pile.peek().turnUp();
+        five.pile.peek().turnUp();
+        four.pile.peek().turnUp();
+        three.pile.peek().turnUp();
+        two.pile.peek().turnUp();
+        one.pile.peek().turnUp();
 
         drawPile = (ImageView) findViewById(R.id.drawPile);
         pile7_1 = (ImageView) findViewById(R.id.pile7_1);
@@ -452,7 +466,7 @@ public class GameBoard extends AppCompatActivity {
                                                                                                                                                                                     public void onAnimationEnd(Animation animation) {
                                                                                                                                                                                         anim_pile2_1.setAnimationListener(null);
                                                                                                                                                                                         // Start next animation
-                                                                                                                                                                                        pile7_7.setImageResource(R.drawable.cb4);
+                                                                                                                                                                                        pile7_7.setImageResource(getResources().getIdentifier(d.pile.get(6).getImgadr(), "drawable", getPackageName()));
                                                                                                                                                                                         final Animation anim_pile7_7 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile7_7);
                                                                                                                                                                                         pile7_7.startAnimation(anim_pile7_7);
                                                                                                                                                                                         anim_pile7_7.setAnimationListener(new Animation.AnimationListener(){
@@ -462,7 +476,7 @@ public class GameBoard extends AppCompatActivity {
                                                                                                                                                                                             public void onAnimationEnd(Animation animation) {
                                                                                                                                                                                                 anim_pile7_7.setAnimationListener(null);
                                                                                                                                                                                                 // Start next animation
-                                                                                                                                                                                                pile6_6.setImageResource(R.drawable.cb4);
+                                                                                                                                                                                                pile6_6.setImageResource(getResources().getIdentifier(d.pile.get(12).getImgadr(), "drawable", getPackageName()));
                                                                                                                                                                                                 final Animation anim_pile6_6 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile6_6);
                                                                                                                                                                                                 pile6_6.startAnimation(anim_pile6_6);
                                                                                                                                                                                                 anim_pile6_6.setAnimationListener(new Animation.AnimationListener(){
@@ -472,7 +486,7 @@ public class GameBoard extends AppCompatActivity {
                                                                                                                                                                                                     public void onAnimationEnd(Animation animation) {
                                                                                                                                                                                                         anim_pile6_6.setAnimationListener(null);
                                                                                                                                                                                                         // Start next animation
-                                                                                                                                                                                                        pile5_5.setImageResource(R.drawable.cb4);
+                                                                                                                                                                                                        pile5_5.setImageResource(getResources().getIdentifier(d.pile.get(17).getImgadr(), "drawable", getPackageName()));
                                                                                                                                                                                                         final Animation anim_pile5_5 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile5_5);
                                                                                                                                                                                                         pile5_5.startAnimation(anim_pile5_5);
                                                                                                                                                                                                         anim_pile5_5.setAnimationListener(new Animation.AnimationListener(){
@@ -482,7 +496,7 @@ public class GameBoard extends AppCompatActivity {
                                                                                                                                                                                                             public void onAnimationEnd(Animation animation) {
                                                                                                                                                                                                                 anim_pile5_5.setAnimationListener(null);
                                                                                                                                                                                                                 // Start next animation
-                                                                                                                                                                                                                pile4_4.setImageResource(R.drawable.cb4);
+                                                                                                                                                                                                                pile4_4.setImageResource(getResources().getIdentifier(d.pile.get(21).getImgadr(), "drawable", getPackageName()));
                                                                                                                                                                                                                 final Animation anim_pile4_4 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile4_4);
                                                                                                                                                                                                                 pile4_4.startAnimation(anim_pile4_4);
                                                                                                                                                                                                                 anim_pile4_4.setAnimationListener(new Animation.AnimationListener(){
@@ -492,7 +506,7 @@ public class GameBoard extends AppCompatActivity {
                                                                                                                                                                                                                     public void onAnimationEnd(Animation animation) {
                                                                                                                                                                                                                         anim_pile4_4.setAnimationListener(null);
                                                                                                                                                                                                                         // Start next animation
-                                                                                                                                                                                                                        pile3_3.setImageResource(R.drawable.cb4);
+                                                                                                                                                                                                                        pile3_3.setImageResource(getResources().getIdentifier(d.pile.get(24).getImgadr(), "drawable", getPackageName()));
                                                                                                                                                                                                                         final Animation anim_pile3_3 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile3_3);
                                                                                                                                                                                                                         pile3_3.startAnimation(anim_pile3_3);
                                                                                                                                                                                                                         anim_pile3_3.setAnimationListener(new Animation.AnimationListener(){
@@ -502,7 +516,7 @@ public class GameBoard extends AppCompatActivity {
                                                                                                                                                                                                                             public void onAnimationEnd(Animation animation) {
                                                                                                                                                                                                                                 anim_pile3_3.setAnimationListener(null);
                                                                                                                                                                                                                                 // Start next animation
-                                                                                                                                                                                                                                pile2_2.setImageResource(R.drawable.cb4);
+                                                                                                                                                                                                                                pile2_2.setImageResource(getResources().getIdentifier(d.pile.get(26).getImgadr(), "drawable", getPackageName()));
                                                                                                                                                                                                                                 final Animation anim_pile2_2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile2_2);
                                                                                                                                                                                                                                 pile2_2.startAnimation(anim_pile2_2);
                                                                                                                                                                                                                                 anim_pile2_2.setAnimationListener(new Animation.AnimationListener(){
@@ -512,7 +526,8 @@ public class GameBoard extends AppCompatActivity {
                                                                                                                                                                                                                                     public void onAnimationEnd(Animation animation) {
                                                                                                                                                                                                                                         anim_pile2_2.setAnimationListener(null);
                                                                                                                                                                                                                                         // Start next animation
-                                                                                                                                                                                                                                        pile1_1.setImageResource(R.drawable.cb4);
+                                                                                                                                                                                                                                        pile1_1.setImageResource(getResources().getIdentifier(d.pile.get(27).getImgadr(), "drawable", getPackageName()));
+                                                                                                                                                                                                                                        //TODO set is up
                                                                                                                                                                                                                                         final Animation anim_pile1_1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile1_1);
                                                                                                                                                                                                                                         pile1_1.startAnimation(anim_pile1_1);
                                                                                                                                                                                                                                         anim_pile1_1.setAnimationListener(new Animation.AnimationListener(){
@@ -801,10 +816,21 @@ public class GameBoard extends AppCompatActivity {
         });
 
 
-        pile2_1.setOnClickListener(new View.OnClickListener(){
+        pile2_1.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view){
+            public boolean onTouch(View v, MotionEvent motionEvent) {
                 pile2_1.setImageResource(getResources().getIdentifier(d.pile.get(25).getImgadr(), "drawable", getPackageName()));
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    ClipData clipData = ClipData.newPlainText("","");
+                    View.DragShadowBuilder dsb = new View.DragShadowBuilder(pile2_1);
+                    //this is deprecated, it could be startDragAndDrop probably
+                    pile2_1.startDrag(clipData, dsb, pile2_1, 0);
+                    pile2_1.setVisibility(View.INVISIBLE);
+                    return true;
+                }
+                else{
+                    return false;
+                }
             }
         });
         pile2_2.setOnTouchListener(new View.OnTouchListener() {
@@ -832,7 +858,7 @@ public class GameBoard extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent motionEvent) {
                 pile1_1.setImageResource(getResources().getIdentifier(d.pile.get(27).getImgadr(), "drawable", getPackageName()));
-                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN && d.pile.get(27).getUp() == true){
                     ClipData clipData = ClipData.newPlainText("","");
                     View.DragShadowBuilder dsb = new View.DragShadowBuilder(pile1_1);
                     //this is deprecated, it could be startDragAndDrop probably
@@ -914,4 +940,7 @@ public class GameBoard extends AppCompatActivity {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
     }
+
+    //TODO maybe delete
+
 }
