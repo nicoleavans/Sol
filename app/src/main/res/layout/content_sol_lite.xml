@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_dark"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="vapor.sol.Sol_lite"
+    tools:showIn="@layout/activity_sol_lite">
+
+    <TextView
+        android:id="@+id/Sol_lite_help"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top"
+        android:layout_margin="10dp"
+        android:keepScreenOn="true"
+        android:text="INSTRUCTIONS"
+        android:textColor="#F5F5F5"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Sol_lite_helptext"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="top"
+        android:keepScreenOn="true"
+        android:text="To quit, type quit. To draw a new card, type draw.  To move, type the name of the target pile, followed by the name of the source pile, and the number of cards you would like to move if more than one.  For example: 'seven spades 3' or 'seven three 2' "
+        android:textColor="#F5F5F5"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/gameOutput"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="120dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="top"
+        android:keepScreenOn="true"
+        android:text="Test"
+        android:textColor="#F5F5F5"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+</android.support.constraint.ConstraintLayout>

@@ -102,7 +102,7 @@ public class Main2Activity extends AppCompatActivity
             myIntent = new Intent(Main2Activity.this, Cups.class);
             //startActivity(myIntent);
         } else if (id == R.id.nav_gallery) {
-
+            myIntent = new Intent(Main2Activity.this, Sol_lite.class);
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
