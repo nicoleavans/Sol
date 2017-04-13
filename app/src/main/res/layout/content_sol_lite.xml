@@ -18,7 +18,7 @@
         android:keepScreenOn="true"
         android:text="INSTRUCTIONS"
         android:textColor="#F5F5F5"
-        android:textSize="15sp"
+        android:textSize="10sp"
         android:textStyle="bold" />
 
     <TextView
@@ -31,7 +31,7 @@
         android:keepScreenOn="true"
         android:text="To quit, type quit. To draw a new card, type draw.  To move, type the name of the target pile, followed by the name of the source pile, and the number of cards you would like to move if more than one.  For example: 'seven spades 3' or 'seven three 2' "
         android:textColor="#F5F5F5"
-        android:textSize="15sp"
+        android:textSize="10sp"
         android:textStyle="bold" />
 
     <TextView

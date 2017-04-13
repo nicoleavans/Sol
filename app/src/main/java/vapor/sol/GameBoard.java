@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.MenuItem;
@@ -33,8 +34,6 @@ public class GameBoard extends AppCompatActivity {
             pile3_1, pile3_2, pile3_3,
             pile2_1, pile2_2,
             pile1_1;
-
-    int width, height;
 
     Deck d;
     SuitPile hearts;
@@ -917,7 +916,7 @@ public class GameBoard extends AppCompatActivity {
                     View.DragShadowBuilder dsb = new View.DragShadowBuilder(pile2_2);
                     //this is deprecated, it could be startDragAndDrop probably
                     pile2_2.startDrag(clipData, dsb, pile2_2, 0);
-                    //pile2_2.setVisibility(View.INVISIBLE);
+                    pile2_2.setVisibility(View.INVISIBLE);
                     return true;
                 }
                 else{
@@ -938,7 +937,7 @@ public class GameBoard extends AppCompatActivity {
                     View.DragShadowBuilder dsb = new View.DragShadowBuilder(pile1_1);
                     //this is deprecated, it could be startDragAndDrop probably
                     pile1_1.startDrag(clipData, dsb, pile1_1, 0);
-                    //pile1_1.setVisibility(View.INVISIBLE);
+                    pile1_1.setVisibility(View.INVISIBLE);
                     return true;
                 }
                 else{

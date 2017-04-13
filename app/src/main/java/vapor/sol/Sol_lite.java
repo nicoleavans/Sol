@@ -18,12 +18,21 @@ import java.util.Stack;
 
 public class Sol_lite extends AppCompatActivity {
 
+    Sol_lite game;
+    //for user input
     EditText commandInput;
+    TextView title;
     TextView gameOutput;
+    //suit piles
+    //hearts
     TextView line01;
+    //spades
     TextView line02;
+    //diamonds
     TextView line03;
+    //clubs
     TextView line04;
+    //playpiles
     TextView line05;
     TextView line06;
     TextView line07;
@@ -31,6 +40,15 @@ public class Sol_lite extends AppCompatActivity {
     TextView line09;
     TextView line10;
     TextView line11;
+
+    //because setText() doesn't like concatenation
+    String one;
+    String two;
+    String three;
+    String four;
+    String five;
+    String six;
+    String seven;
 
 
     @Override
@@ -52,12 +70,62 @@ public class Sol_lite extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        game = new Sol_lite();
+        //creates strings for playpiles
+        one = "one " + game.p.one.pile.toString();
+        two = "two " + game.p.two.pile.toString();
+        three = "three " + game.p.three.pile.toString();
+        four = "four " + game.p.four.pile.toString();
+        five = "five " + game.p.five.pile.toString();
+        six = "six " + game.p.six.pile.toString();
+        seven = "seven " + game.p.seven.pile.toString();
+
+        title.setText(game.greetingMessage());
+
+        line01 = (TextView) findViewById(R.id.line01);
+        //if the pile is empty show the symbol, else the top card to string. true for all suitpiles
+        if(game.p.hearts.pile.empty()){
+            line01.setText("♥ ");
+        }
+        else{
+            line01.setText(game.p.hearts.pile.peek().toString());
+        }
+        line02 = (TextView) findViewById(R.id.line02);
+        if(game.p.spades.pile.empty()){
+            line02.setText("♠ ");
+        }
+        else{
+            line02.setText(game.p.spades.pile.peek().toString());
+        }
+        line03 = (TextView) findViewById(R.id.line03);
+        if(game.p.diamonds.pile.empty()){
+            line03.setText("♦ ");
+        }
+        else{
+            line03.setText(game.p.diamonds.pile.peek().toString());
+        }
+        line04 = (TextView) findViewById(R.id.line04);
+        if(game.p.clubs.pile.empty()){
+            line04.setText("♣ ");
+        }
+        else{
+            line04.setText(game.p.clubs.pile.peek().toString());
+        }
         line05 = (TextView) findViewById(R.id.line05);
-        line05.setText("one " + p.one.pile.toString());
+        line05.setText(one);
         line06 = (TextView) findViewById(R.id.line06);
-        line06.setText("two " + p.two.pile.toString());
+        line06.setText(two);
         line07 = (TextView) findViewById(R.id.line07);
-        line07.setText("three " + p.three.pile.toString());
+        line07.setText(three);
+        line08 = (TextView) findViewById(R.id.line08);
+        line08.setText(four);
+        line09 = (TextView) findViewById(R.id.line09);
+        line09.setText(five);
+        line10 = (TextView) findViewById(R.id.line10);
+        line10.setText(six);
+        line11 = (TextView) findViewById(R.id.line11);
+        line11.setText(seven);
+
     }
 
 
@@ -65,6 +133,7 @@ public class Sol_lite extends AppCompatActivity {
         Scanner sc = new Scanner(System.in);
         PlaySpaces p;
 
+        //so Sol_Lite corresponds to the previous launcher class
         public Sol_lite(){
             p = new PlaySpaces();
         }
@@ -75,13 +144,12 @@ public class Sol_lite extends AppCompatActivity {
          * and starts the game sequence
          */
         public static void main(String[] args) {
-            // TODO code application logic here
             Sol_lite l = new Sol_lite();
             l.greetingMessage();
             System.out.println("\n\nI N S T R U C T I O N S\n");
             System.out.println("To quit, type \"quit\". To draw a new card, type \"draw\".\n");
             System.out.println("To move, type the name of the target pile, followed by the name of the source pile, and the number of cards you would like to move if more than one.\n");
-            System.out.println("For example \"seven spades 3\" or \"hearts one\" or \"seven three 2\"");
+            System.out.println("For example \"seven spades 3\" or \"hearts one\" or \"seven three 2\" or \"five draw\"");
             l.printCurrentStep();
             l.startGame();
         }
@@ -479,9 +547,9 @@ public class Sol_lite extends AppCompatActivity {
          * these handle moving from suit piles
          * CURRENTLY BREAKS CODE NEED OF REPAIR
          * (non vital b/c unlikely move)
-
             else if(c1.equalsIgnoreCase("spades")){
                 if(c2.equalsIgnoreCase("seven")){
+                    //p.spades.addCard(p.seven);
                     p.spades.addCard(p.seven);
                     return true;
                 }
@@ -733,7 +801,7 @@ public class Sol_lite extends AppCompatActivity {
             System.out.print("\n" + "Your Next Move: ");
 
         }
-        private void greetingMessage() {
+        private String greetingMessage() {
 
             String greeting = "      	   	         _______  _______  ___      ___   _______  _______  ___   ______    _______" + "\n"
                     + "			|       ||       ||   |    |   | |       ||   _   ||   | |    _ |  |       |" + "\n"
@@ -743,22 +811,12 @@ public class Sol_lite extends AppCompatActivity {
                     + "			 _____| ||       ||       ||   |   |   |  |   _   ||   | |   |  | ||   |___ " + "\n"
                     + "			|_______||_______||_______||___|   |___|  |__| |__||___| |___|  |_||_______|";
 
-            System.out.println(greeting);
+            return greeting;
         }
 
 
 
 }
-
-
-
-
-/*
- * TODO this build has issues: the cards are all revealed, not just the ones that are verified uncovered
- * this build doesn't support moving any more than the top card on a stack, but that should be possible (if annoying and tedious)
- * to implement. that said this is exciting progress I think!
- */
-
 
 /**
  * This class stores necessary information about cards. Possibly we could phase out color in favor of suit and
@@ -770,7 +828,6 @@ class Cards {
     private String suit;
     private String color;
     private int value;
-    private int cardID;
     private boolean up;
     /*
      * Constructor
@@ -782,7 +839,6 @@ class Cards {
         suit = s;
         color = c;
         value = v;
-        cardID = i;
         up = false;
 
         //debug
@@ -800,20 +856,19 @@ class Cards {
     int getValue(){
         return value;
     }
-    int getCardID(){return cardID;}
     boolean getUp(){return up;}
     void turnUp(){up = true;}
 
     String toSymbol(){
         String temp = this.getSuit();
         String r;
-        if(temp == "spades"){
+        if(temp.equals("spades")){
             r = "♠";
         }
-        else if(temp == "diamonds"){
+        else if(temp.equals("diamonds")){
             r = "♦";
         }
-        else if(temp == "hearts"){
+        else if(temp.equals("hearts")){
             r = "♥";
         }
         else{
@@ -1013,35 +1068,6 @@ class PlayPiles{
     }
 
    /*
-   //THIS IS EXPERIMENTAL
-   public void addCard(PlayPiles p, int i){
-       Cards c = null;
-       Cards lead = null;
-       Cards target = pile.peek();
-       Stack<Cards> s = new Stack<Cards>();
-       //so it takes the number of cards you want to move, and puts them into a temp stack
-       for(int temp = i; temp > 0; temp--){
-           c = p.pile.pop();
-           s.push(c);
-           //this should capture the very last card here, which would be the top lead card
-           lead = c;
-       }
-       //if the pile is empty and the lead card is a king or if it isn't empty but the card being moved is an opposite color and one value less than target
-       if((pile.empty() && lead.getValue() == 13) || (!pile.empty() && !lead.getColor().equals(target.getColor()) && (lead.getValue() == (target.getValue() - 1)))){
-           for(int temp = i; temp > 0; temp--){
-               p.pile.push(s.pop());
-           }
-       }
-       //else it doesn't fit, reverse what happened
-       else{
-           for(int temp = i; temp > 0; temp--){
-               c = s.pop();
-               p.pile.push(c);
-           }
-       }
-   }
-   */
-   /*
     * This method handles a suit pile target.
     * @param s  target suit pile
     */
@@ -1063,34 +1089,6 @@ class PlayPiles{
         }
     }
 
-    /*
-    public void addCard(SuitPiles p, int i){
-        Cards c = null;
-        Cards lead = null;
-        Cards landing = p.pile.peek();
-        Stack<Cards> s = new Stack<Cards>();
-        //so it takes the number of cards you want to move, and puts them into a temp stack
-        for(int temp = i; temp > 0; temp--){
-            c = p.pile.pop();
-            s.push(c);
-            //this should capture the very last card here, which would be the top lead card
-            lead = c;
-        }
-        //if the pile is empty and the lead card is a king or if it isn't empty but the card being moved is an opposite color and one value less than target
-        if((pile.empty() && lead.getValue() == 13) || (!pile.empty() && !lead.getColor().equals(landing.getColor()) && lead.getValue() == (landing.getValue() - 1))){
-            for(int temp = i; temp > 0; temp--){
-                p.pile.push(s.pop());
-            }
-        }
-        //else it doesn't fit, reverse what happened
-        else{
-            for(int temp = i; temp > 0; temp--){
-                c = s.pop();
-                p.pile.push(c);
-            }
-        }
-    }
-    */
    /*
     * This method handles a draw pile target.
     * @param d target draw pile
@@ -1111,26 +1109,6 @@ class PlayPiles{
             }
         }
     }
-
-    public String toString(){
-        if(pile.empty()){
-            return "empty";
-        }
-        else{
-            Stack<Cards> temp = pile;
-            StringBuilder s = new StringBuilder();
-            for(Cards c : temp){
-                if(c.getUp()){
-                    s.append(c.toString() + " ");
-                }
-                else{
-                    s.append("X");
-                }
-            }
-            String r = s.toString();
-            return r;
-        }
-    }
 }
 
 
@@ -1139,8 +1117,6 @@ class PlayPiles{
  * This method exists to generate a play board instead of leaving it in the main method
  * both for simplicity and also for starting a new game. Also importantly, this can handle
  * shuffling the cards and populating the piles within the game.
- *
- * TODO add methods or buttons etc or additional user functionality
  */
 
 class PlaySpaces{
@@ -1283,34 +1259,6 @@ class SuitPiles{
         }
     }
 
-    /*
-    public void addCard(DrawPiles p, int i){
-       Cards c = null;
-       Cards lead = null;
-       Cards landing = p.q.peek();
-       Stack<Cards> s = new Stack<Cards>();
-       //so it takes the number of cards you want to move, and puts them into a temp stack
-       for(int temp = i; temp > 0; temp--){
-           c = p.q.remove();
-           s.push(c);
-           //this should capture the very last card here, which would be the top lead card
-           lead = c;
-       }
-       //if the pile is empty and the lead card is a king or if it isn't empty but the card being moved is an opposite color and one value less than target
-       if((pile.empty() && lead.getValue() == 1) || (!pile.empty() && landing.getValue() == lead.getValue() + 1)){
-           for(int temp = i; temp > 0; temp--){
-               p.q.add(s.pop());
-           }
-       }
-       //else it doesn't fit, reverse what happened
-       else{
-           for(int temp = i; temp > 0; temp--){
-               c = s.pop();
-               p.q.add(c);
-           }
-       }
-    }
-    */
    /*
     * This method handles a play pile target.
     * @param p  target play pile
@@ -1329,41 +1277,12 @@ class SuitPiles{
             else if(!pile.empty()){
                 val = pile.peek();
                 //if the card to be added is greater by one
-                if(val.getValue() == c.getValue() - 1){
+                if(c.getValue() == val.getValue() - 1){
                     pile.add(p.pile.pop());
                 }
             }
         }
     }
-
-   /*
-    public void addCard(PlayPiles p, int i){
-       Cards c = null;
-       Cards lead = null;
-       Cards landing = p.pile.peek();
-       Stack<Cards> s = new Stack<Cards>();
-       //so it takes the number of cards you want to move, and puts them into a temp stack
-       for(int temp = i; temp > 0; temp--){
-           c = p.pile.pop();
-           s.push(c);
-           //this should capture the very last card here, which would be the top lead card
-           lead = c;
-       }
-       //if the pile is empty and the lead card is a king or if it isn't empty but the card being moved is an opposite color and one value less than target
-       if((pile.empty() && lead.getValue() == 1) || (!pile.empty() && landing.getValue() == (lead.getValue() + 1))){
-           for(int temp = i; temp > 0; temp--){
-               p.pile.push(s.pop());
-           }
-       }
-       //else it doesn't fit, reverse what happened
-       else{
-           for(int temp = i; temp > 0; temp--){
-               c = s.pop();
-               p.pile.push(c);
-           }
-       }
-     }
-     */
    /*
     * This method handles a suit pile target.
     * @param s  target suit pile
@@ -1388,40 +1307,4 @@ class SuitPiles{
             }
         }
     }
-
-    /*
-    public void addCard(SuitPiles p, int i){
-       Cards c = null;
-       Cards lead = null;
-       Cards landing = p.pile.peek();
-       Stack<Cards> s = new Stack<Cards>();
-       //so it takes the number of cards you want to move, and puts them into a temp stack
-       for(int temp = i; temp > 0; temp--){
-           c = p.pile.pop();
-           s.push(c);
-           //this should capture the very last card here, which would be the top lead card
-           lead = c;
-       }
-       //if the pile is empty and the lead card is a king or if it isn't empty but the card being moved is an opposite color and one value less than target
-       if((pile.empty() && lead.getValue() == 1) || (!pile.empty() && landing.getValue() == (lead.getValue() + 1))){
-           for(int temp = i; temp > 0; temp--){
-               p.pile.push(s.pop());
-           }
-       }
-       //else it doesn't fit, reverse what happened
-       else{
-           for(int temp = i; temp > 0; temp--){
-               c = s.pop();
-               p.pile.push(c);
-           }
-       }
-     }
-     */
-    public String toString(){
-        if(pile.isEmpty())
-            return "Empty";
-        else
-            return pile.peek().toString();
-    }
-
 }
