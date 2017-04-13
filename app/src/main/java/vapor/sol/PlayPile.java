@@ -173,24 +173,4 @@ class PlayPile{
             }
         }
     }
-
-    public String toString(){
-        if(pile.empty()){
-            return "empty";
-        }
-        else{
-            Stack<Card> temp = pile;
-            StringBuilder s = new StringBuilder();
-            for(Card c : temp){
-                if(c.getUp()){
-                    s.append(c.toString() + " ");
-                }
-                else{
-                    s.append("X");
-                }
-            }
-            String r = s.toString();
-            return r;
-        }
-    }
 }
