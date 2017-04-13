@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.support.v4.app.NavUtils;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 
 /**
@@ -32,6 +33,8 @@ public class GameBoard extends AppCompatActivity {
             pile3_1, pile3_2, pile3_3,
             pile2_1, pile2_2,
             pile1_1;
+
+    int width, height;
 
     Deck d;
     SuitPile hearts;
@@ -255,6 +258,7 @@ public class GameBoard extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 anim_draw_pile.setAnimationListener(null);
+                drawPile.setVisibility(View.INVISIBLE);
                 // Start next animation
                 pile7_1.setImageResource(R.drawable.cb4);
                 final Animation anim_pile7_1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile7_1);
@@ -475,6 +479,8 @@ public class GameBoard extends AppCompatActivity {
                                                                                                                                                                                             @Override
                                                                                                                                                                                             public void onAnimationEnd(Animation animation) {
                                                                                                                                                                                                 anim_pile7_7.setAnimationListener(null);
+                                                                                                                                                                                                pile7_7.setTranslationX(1670);
+                                                                                                                                                                                                pile7_7.setTranslationY(535);
                                                                                                                                                                                                 // Start next animation
                                                                                                                                                                                                 pile6_6.setImageResource(getResources().getIdentifier(d.pile.get(12).getImgadr(), "drawable", getPackageName()));
                                                                                                                                                                                                 final Animation anim_pile6_6 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile6_6);
@@ -485,6 +491,8 @@ public class GameBoard extends AppCompatActivity {
                                                                                                                                                                                                     @Override
                                                                                                                                                                                                     public void onAnimationEnd(Animation animation) {
                                                                                                                                                                                                         anim_pile6_6.setAnimationListener(null);
+                                                                                                                                                                                                        pile6_6.setTranslationX(1400);
+                                                                                                                                                                                                        pile6_6.setTranslationY(500);
                                                                                                                                                                                                         // Start next animation
                                                                                                                                                                                                         pile5_5.setImageResource(getResources().getIdentifier(d.pile.get(17).getImgadr(), "drawable", getPackageName()));
                                                                                                                                                                                                         final Animation anim_pile5_5 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile5_5);
@@ -495,6 +503,8 @@ public class GameBoard extends AppCompatActivity {
                                                                                                                                                                                                             @Override
                                                                                                                                                                                                             public void onAnimationEnd(Animation animation) {
                                                                                                                                                                                                                 anim_pile5_5.setAnimationListener(null);
+                                                                                                                                                                                                                pile5_5.setTranslationX(1130);
+                                                                                                                                                                                                                pile5_5.setTranslationY(465);
                                                                                                                                                                                                                 // Start next animation
                                                                                                                                                                                                                 pile4_4.setImageResource(getResources().getIdentifier(d.pile.get(21).getImgadr(), "drawable", getPackageName()));
                                                                                                                                                                                                                 final Animation anim_pile4_4 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile4_4);
@@ -505,6 +515,10 @@ public class GameBoard extends AppCompatActivity {
                                                                                                                                                                                                                     @Override
                                                                                                                                                                                                                     public void onAnimationEnd(Animation animation) {
                                                                                                                                                                                                                         anim_pile4_4.setAnimationListener(null);
+                                                                                                                                                                                                                        pile4_4.setTranslationX(860);
+                                                                                                                                                                                                                        pile4_4.setTranslationY(430);
+                                                                                                                                                                                                                        //pile4_4.setX((int)(50));
+                                                                                                                                                                                                                        //pile4_4.setY((int)(10));
                                                                                                                                                                                                                         // Start next animation
                                                                                                                                                                                                                         pile3_3.setImageResource(getResources().getIdentifier(d.pile.get(24).getImgadr(), "drawable", getPackageName()));
                                                                                                                                                                                                                         final Animation anim_pile3_3 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile3_3);
@@ -515,6 +529,10 @@ public class GameBoard extends AppCompatActivity {
                                                                                                                                                                                                                             @Override
                                                                                                                                                                                                                             public void onAnimationEnd(Animation animation) {
                                                                                                                                                                                                                                 anim_pile3_3.setAnimationListener(null);
+                                                                                                                                                                                                                                pile3_3.setTranslationX(590);
+                                                                                                                                                                                                                                pile3_3.setTranslationY(395);
+                                                                                                                                                                                                                                //pile3_3.setX((int)(650));
+                                                                                                                                                                                                                                //pile3_3.setY((int)(400));
                                                                                                                                                                                                                                 // Start next animation
                                                                                                                                                                                                                                 pile2_2.setImageResource(getResources().getIdentifier(d.pile.get(26).getImgadr(), "drawable", getPackageName()));
                                                                                                                                                                                                                                 final Animation anim_pile2_2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.pile2_2);
@@ -525,6 +543,11 @@ public class GameBoard extends AppCompatActivity {
                                                                                                                                                                                                                                     @Override
                                                                                                                                                                                                                                     public void onAnimationEnd(Animation animation) {
                                                                                                                                                                                                                                         anim_pile2_2.setAnimationListener(null);
+                                                                                                                                                                                                                                        //TranslateAnimation translateAnimation=new TranslateAnimation(0,180,0,120);
+                                                                                                                                                                                                                                        pile2_2.setTranslationX(320);
+                                                                                                                                                                                                                                        pile2_2.setTranslationY(360);
+                                                                                                                                                                                                                                        //pile2_2.setX((int)(380));
+                                                                                                                                                                                                                                        //pile2_2.setY((int)(360));
                                                                                                                                                                                                                                         // Start next animation
                                                                                                                                                                                                                                         pile1_1.setImageResource(getResources().getIdentifier(d.pile.get(27).getImgadr(), "drawable", getPackageName()));
                                                                                                                                                                                                                                         //TODO set is up
@@ -536,6 +559,8 @@ public class GameBoard extends AppCompatActivity {
                                                                                                                                                                                                                                             @Override
                                                                                                                                                                                                                                             public void onAnimationEnd(Animation animation) {
                                                                                                                                                                                                                                                 anim_pile1_1.setAnimationListener(null);
+                                                                                                                                                                                                                                                pile1_1.setTranslationX(50);
+                                                                                                                                                                                                                                                pile1_1.setTranslationY(320);
                                                                                                                                                                                                                                                 // Start next animation
                                                                                                                                                                                                                                             }
                                                                                                                                                                                                                                             @Override
@@ -696,10 +721,20 @@ public class GameBoard extends AppCompatActivity {
                 pile7_6.setImageResource(getResources().getIdentifier(d.pile.get(5).getImgadr(), "drawable", getPackageName()));
             }
         });
-        pile7_7.setOnClickListener(new View.OnClickListener(){
+        pile7_7.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view){
+            public boolean onTouch(View v, MotionEvent motionEvent) {
                 pile7_7.setImageResource(getResources().getIdentifier(d.pile.get(6).getImgadr(), "drawable", getPackageName()));
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    ClipData clipData = ClipData.newPlainText("","");
+                    View.DragShadowBuilder dsb = new View.DragShadowBuilder(pile7_7);
+                    //this is deprecated, it could be startDragAndDrop probably
+                    pile7_7.startDrag(clipData, dsb, pile7_7, 0);
+                    return true;
+                }
+                else{
+                    return false;
+                }
             }
         });
 
@@ -733,10 +768,20 @@ public class GameBoard extends AppCompatActivity {
                 pile6_5.setImageResource(getResources().getIdentifier(d.pile.get(11).getImgadr(), "drawable", getPackageName()));
             }
         });
-        pile6_6.setOnClickListener(new View.OnClickListener(){
+        pile6_6.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view){
+            public boolean onTouch(View v, MotionEvent motionEvent) {
                 pile6_6.setImageResource(getResources().getIdentifier(d.pile.get(12).getImgadr(), "drawable", getPackageName()));
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    ClipData clipData = ClipData.newPlainText("","");
+                    View.DragShadowBuilder dsb = new View.DragShadowBuilder(pile6_6);
+                    //this is deprecated, it could be startDragAndDrop probably
+                    pile6_6.startDrag(clipData, dsb, pile6_6, 0);
+                    return true;
+                }
+                else{
+                    return false;
+                }
             }
         });
 
@@ -764,10 +809,20 @@ public class GameBoard extends AppCompatActivity {
                 pile5_4.setImageResource(getResources().getIdentifier(d.pile.get(16).getImgadr(), "drawable", getPackageName()));
             }
         });
-        pile5_5.setOnClickListener(new View.OnClickListener(){
+        pile5_5.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view){
+            public boolean onTouch(View v, MotionEvent motionEvent) {
                 pile5_5.setImageResource(getResources().getIdentifier(d.pile.get(17).getImgadr(), "drawable", getPackageName()));
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    ClipData clipData = ClipData.newPlainText("","");
+                    View.DragShadowBuilder dsb = new View.DragShadowBuilder(pile5_5);
+                    //this is deprecated, it could be startDragAndDrop probably
+                    pile5_5.startDrag(clipData, dsb, pile5_5, 0);
+                    return true;
+                }
+                else{
+                    return false;
+                }
             }
         });
 
@@ -789,10 +844,20 @@ public class GameBoard extends AppCompatActivity {
                 pile4_3.setImageResource(getResources().getIdentifier(d.pile.get(20).getImgadr(), "drawable", getPackageName()));
             }
         });
-        pile4_4.setOnClickListener(new View.OnClickListener(){
+        pile4_4.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view){
+            public boolean onTouch(View v, MotionEvent motionEvent) {
                 pile4_4.setImageResource(getResources().getIdentifier(d.pile.get(21).getImgadr(), "drawable", getPackageName()));
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    ClipData clipData = ClipData.newPlainText("","");
+                    View.DragShadowBuilder dsb = new View.DragShadowBuilder(pile4_4);
+                    //this is deprecated, it could be startDragAndDrop probably
+                    pile4_4.startDrag(clipData, dsb, pile4_4, 0);
+                    return true;
+                }
+                else{
+                    return false;
+                }
             }
         });
 
@@ -808,10 +873,20 @@ public class GameBoard extends AppCompatActivity {
                 pile3_2.setImageResource(getResources().getIdentifier(d.pile.get(23).getImgadr(), "drawable", getPackageName()));
             }
         });
-        pile3_3.setOnClickListener(new View.OnClickListener(){
+        pile3_3.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view){
+            public boolean onTouch(View v, MotionEvent motionEvent) {
                 pile3_3.setImageResource(getResources().getIdentifier(d.pile.get(24).getImgadr(), "drawable", getPackageName()));
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    ClipData clipData = ClipData.newPlainText("","");
+                    View.DragShadowBuilder dsb = new View.DragShadowBuilder(pile3_3);
+                    //this is deprecated, it could be startDragAndDrop probably
+                    pile3_3.startDrag(clipData, dsb, pile3_3, 0);
+                    return true;
+                }
+                else{
+                    return false;
+                }
             }
         });
 
@@ -825,7 +900,7 @@ public class GameBoard extends AppCompatActivity {
                     View.DragShadowBuilder dsb = new View.DragShadowBuilder(pile2_1);
                     //this is deprecated, it could be startDragAndDrop probably
                     pile2_1.startDrag(clipData, dsb, pile2_1, 0);
-                    pile2_1.setVisibility(View.INVISIBLE);
+                    //pile2_1.setVisibility(View.INVISIBLE);
                     return true;
                 }
                 else{
@@ -842,7 +917,7 @@ public class GameBoard extends AppCompatActivity {
                     View.DragShadowBuilder dsb = new View.DragShadowBuilder(pile2_2);
                     //this is deprecated, it could be startDragAndDrop probably
                     pile2_2.startDrag(clipData, dsb, pile2_2, 0);
-                    pile2_2.setVisibility(View.INVISIBLE);
+                    //pile2_2.setVisibility(View.INVISIBLE);
                     return true;
                 }
                 else{
@@ -863,7 +938,7 @@ public class GameBoard extends AppCompatActivity {
                     View.DragShadowBuilder dsb = new View.DragShadowBuilder(pile1_1);
                     //this is deprecated, it could be startDragAndDrop probably
                     pile1_1.startDrag(clipData, dsb, pile1_1, 0);
-                    pile1_1.setVisibility(View.INVISIBLE);
+                    //pile1_1.setVisibility(View.INVISIBLE);
                     return true;
                 }
                 else{

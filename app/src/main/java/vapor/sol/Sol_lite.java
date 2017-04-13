@@ -20,6 +20,18 @@ public class Sol_lite extends AppCompatActivity {
 
     EditText commandInput;
     TextView gameOutput;
+    TextView line01;
+    TextView line02;
+    TextView line03;
+    TextView line04;
+    TextView line05;
+    TextView line06;
+    TextView line07;
+    TextView line08;
+    TextView line09;
+    TextView line10;
+    TextView line11;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +52,12 @@ public class Sol_lite extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
+        line05 = (TextView) findViewById(R.id.line05);
+        line05.setText("one " + p.one.pile.toString());
+        line06 = (TextView) findViewById(R.id.line06);
+        line06.setText("two " + p.two.pile.toString());
+        line07 = (TextView) findViewById(R.id.line07);
+        line07.setText("three " + p.three.pile.toString());
     }
 
 
