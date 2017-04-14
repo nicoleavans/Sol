@@ -24,7 +24,7 @@ public class Sol_lite extends AppCompatActivity {
     EditText commandInput;
     TextView title;
     TextView gameOutput;
-    TextView drawline;
+    //TextView drawline;
     //suit piles
     //hearts
     TextView line01;
@@ -53,7 +53,7 @@ public class Sol_lite extends AppCompatActivity {
     String seven;
     String greeting;
     String input;
-    String dline;
+    //String dline;
 
 
     @Override
@@ -86,16 +86,9 @@ public class Sol_lite extends AppCompatActivity {
                 six = "six " + game.p.six.pile.toString();
                 seven = "seven " + game.p.seven.pile.toString();
 
-                dline = "draw " + game.p.draw.q.peek().toString();
+                //dline = "draw " + game.p.draw.q.peek().toString();
+                //drawline.setText(dline);
 
-                drawline.setText(dline);
-
-                line01.setText(game.p.hearts.pile.peek().toString());
-                line02.setText(game.p.spades.pile.peek().toString());
-                line03.setText(game.p.diamonds.pile.peek().toString());
-                line04.setText(game.p.clubs.pile.peek().toString());
-
-                /*
                 if(game.p.hearts.pile.empty()){
                     line01.setText("♥ ");
                 }
@@ -120,7 +113,6 @@ public class Sol_lite extends AppCompatActivity {
                 else{
                     line04.setText(game.p.clubs.pile.peek().toString());
                 }
-                */
                 line05.setText(one);
                 line06.setText(two);
                 line07.setText(three);
@@ -142,17 +134,14 @@ public class Sol_lite extends AppCompatActivity {
         five = "five " + game.p.five.pile.toString();
         six = "six " + game.p.six.pile.toString();
         seven = "seven " + game.p.seven.pile.toString();
-
-        dline = "draw " + game.p.draw.q.peek().toString();
-
-        drawline.setText(dline);
+        //dline = "draw " + game.p.draw.q.peek().toString();
 
         title = (TextView) findViewById(R.id.title);
         greeting = game.greetingMessage();
         title.setText(greeting);
 
-        drawline = (TextView) findViewById(R.id.drawline);
-        drawline.setText(dline);
+        //drawline = (TextView) findViewById(R.id.drawline);
+        //drawline.setText(dline);
 
 
         line01 = (TextView) findViewById(R.id.line01);
@@ -615,13 +604,9 @@ public class Sol_lite extends AppCompatActivity {
                     return true;
                 }
             }
-        /*
-         * these handle moving from suit piles
-         * CURRENTLY BREAKS CODE NEED OF REPAIR
-         * (non vital b/c unlikely move)
+            /*
             else if(c1.equalsIgnoreCase("spades")){
                 if(c2.equalsIgnoreCase("seven")){
-                    //p.spades.addCard(p.seven);
                     p.spades.addCard(p.seven);
                     return true;
                 }
@@ -1336,7 +1321,7 @@ class SuitPiles{
     * @param p  target play pile
     */
 
-    public void add(PlayPiles p){
+    public void addCard(PlayPiles p){
         Cards c = p.pile.peek();
         Cards val;
         //checks if the suit is correct

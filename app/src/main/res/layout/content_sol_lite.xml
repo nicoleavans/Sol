@@ -60,17 +60,6 @@
         android:textSize="15sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/drawline"
-        android:layout_marginTop="120dp"
-        android:layout_marginLeft="10dp"
-        android:gravity="top"
-        android:keepScreenOn="true"
-        android:text="Test"
-        android:textColor="#F5F5F5"
-        android:textSize="15sp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
     <TextView
         android:id="@+id/line01"
