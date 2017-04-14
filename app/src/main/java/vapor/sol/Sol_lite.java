@@ -24,7 +24,7 @@ public class Sol_lite extends AppCompatActivity {
     EditText commandInput;
     TextView title;
     TextView gameOutput;
-    //TextView drawline;
+    TextView drawline;
     //suit piles
     //hearts
     TextView line01;
@@ -53,7 +53,7 @@ public class Sol_lite extends AppCompatActivity {
     String seven;
     String greeting;
     String input;
-    //String dline;
+    String dline;
 
 
     @Override
@@ -73,21 +73,21 @@ public class Sol_lite extends AppCompatActivity {
             public void onClick(View view) {
                 commandInput = (EditText) findViewById(R.id.commandInput);
                 gameOutput = (TextView) findViewById(R.id.gameOutput);
-                gameOutput.setText(commandInput.getText());
+                gameOutput.setText("last command:  " + commandInput.getText());
                 input = commandInput.getText().toString();
                 game.gameCommands(input);
 
                 //maybe this will update it every time
-                one = "one " + game.p.one.pile.toString();
-                two = "two " + game.p.two.pile.toString();
-                three = "three " + game.p.three.pile.toString();
-                four = "four " + game.p.four.pile.toString();
-                five = "five " + game.p.five.pile.toString();
-                six = "six " + game.p.six.pile.toString();
-                seven = "seven " + game.p.seven.pile.toString();
+                one = "one:      " + game.p.one.pile.toString();
+                two = "two:      " + game.p.two.pile.toString();
+                three = "three:   " + game.p.three.pile.toString();
+                four = "four:     " + game.p.four.pile.toString();
+                five = "five:      " + game.p.five.pile.toString();
+                six = "six:        " + game.p.six.pile.toString();
+                seven = "seven:  " + game.p.seven.pile.toString();
 
-                //dline = "draw " + game.p.draw.q.peek().toString();
-                //drawline.setText(dline);
+                dline = "draw:  " + game.p.draw.q.peek().toString();
+                drawline.setText(dline);
 
                 if(game.p.hearts.pile.empty()){
                     line01.setText("♥ ");
@@ -127,21 +127,21 @@ public class Sol_lite extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //creates strings for playpiles
-        one = "one " + game.p.one.pile.toString();
-        two = "two " + game.p.two.pile.toString();
-        three = "three " + game.p.three.pile.toString();
-        four = "four " + game.p.four.pile.toString();
-        five = "five " + game.p.five.pile.toString();
-        six = "six " + game.p.six.pile.toString();
-        seven = "seven " + game.p.seven.pile.toString();
-        //dline = "draw " + game.p.draw.q.peek().toString();
+        one = "one:      " + game.p.one.pile.toString();
+        two = "two:      " + game.p.two.pile.toString();
+        three = "three:   " + game.p.three.pile.toString();
+        four = "four:     " + game.p.four.pile.toString();
+        five = "five:      " + game.p.five.pile.toString();
+        six = "six:        " + game.p.six.pile.toString();
+        seven = "seven:  " + game.p.seven.pile.toString();
+        dline = "draw:  " + game.p.draw.q.peek().toString();
 
         title = (TextView) findViewById(R.id.title);
         greeting = game.greetingMessage();
         title.setText(greeting);
 
-        //drawline = (TextView) findViewById(R.id.drawline);
-        //drawline.setText(dline);
+        drawline = (TextView) findViewById(R.id.drawline);
+        drawline.setText(dline);
 
 
         line01 = (TextView) findViewById(R.id.line01);
@@ -604,7 +604,7 @@ public class Sol_lite extends AppCompatActivity {
                     return true;
                 }
             }
-            /*
+
             else if(c1.equalsIgnoreCase("spades")){
                 if(c2.equalsIgnoreCase("seven")){
                     p.spades.addCard(p.seven);
@@ -805,7 +805,7 @@ public class Sol_lite extends AppCompatActivity {
                     return true;
                 }
             }
-            */
+
             else{
                 return false;
             }
@@ -860,13 +860,13 @@ public class Sol_lite extends AppCompatActivity {
         }
         private String greetingMessage() {
 
-            String greeting = "      	   	         _______  _______  ___      ___   _______  _______  ___   ______    _______" + "\n"
-                    + "			|       ||       ||   |    |   | |       ||   _   ||   | |    _ |  |       |" + "\n"
-                    + "			|  _____||   _   ||   |    |   | |_     _||  | |  ||   | |   | ||  |    ___|" + "\n"
-                    + "			| |_____ |  | |  ||   |    |   |   |   |  |  |_|  ||   | |   |_||_ |   |___ " + "\n"
-                    + "			|_____  ||  |_|  ||   |___ |   |   |   |  |       ||   | |    __  ||    ___|" + "\n"
-                    + "			 _____| ||       ||       ||   |   |   |  |   _   ||   | |   |  | ||   |___ " + "\n"
-                    + "			|_______||_______||_______||___|   |___|  |__| |__||___| |___|  |_||_______|";
+            String greeting = " ______   _____   __  " + "\n"
+                    + "|           | |         | |   |    " + "\n"
+                    + "|  _____| |   _    | |   |    " + "\n"
+                    + "| |_____  |  |  |   | |   |    " + "\n"
+                    + "|_____  | |  |_|   | |   |___ " + "\n"
+                    + " _____| | |         | |         |" + "\n"
+                    + "|______| |_____| |_____|  lite";
 
             return greeting;
         }

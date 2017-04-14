@@ -8,8 +8,8 @@
             android:title="Cups" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_sync_black_24dp"
-            android:title="tbd" />
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Sol lite" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_sync_black_24dp"
