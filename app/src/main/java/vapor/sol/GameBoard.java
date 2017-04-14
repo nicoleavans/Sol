@@ -1160,7 +1160,7 @@ public class GameBoard extends AppCompatActivity {
                     View.DragShadowBuilder dsb = new View.DragShadowBuilder(pile2_2);
                     //this is deprecated, it could be startDragAndDrop probably
                     pile2_2.startDrag(clipData, dsb, pile2_2, 0);
-                    //pile2_2.setVisibility(View.INVISIBLE);
+                    pile2_2.setVisibility(View.INVISIBLE);
                     return true;
                 }
                 else{
@@ -1181,7 +1181,7 @@ public class GameBoard extends AppCompatActivity {
                     View.DragShadowBuilder dsb = new View.DragShadowBuilder(pile1_1);
                     //this is deprecated, it could be startDragAndDrop probably
                     pile1_1.startDrag(clipData, dsb, pile1_1, 0);
-                    //pile1_1.setVisibility(View.INVISIBLE);
+                    pile1_1.setVisibility(View.INVISIBLE);
                     return true;
                 }
                 else{

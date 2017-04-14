@@ -73,11 +73,14 @@ public class Sol_lite extends AppCompatActivity {
             public void onClick(View view) {
                 commandInput = (EditText) findViewById(R.id.commandInput);
                 gameOutput = (TextView) findViewById(R.id.gameOutput);
+              
                 gameOutput.setText("last command:  " + commandInput.getText());
+
                 input = commandInput.getText().toString();
                 game.gameCommands(input);
 
                 //maybe this will update it every time
+
                 one = "one:      " + game.p.one.pile.toString();
                 two = "two:      " + game.p.two.pile.toString();
                 three = "three:   " + game.p.three.pile.toString();
@@ -88,6 +91,7 @@ public class Sol_lite extends AppCompatActivity {
 
                 dline = "draw:  " + game.p.draw.q.peek().toString();
                 drawline.setText(dline);
+
 
                 if(game.p.hearts.pile.empty()){
                     line01.setText("♥ ");
@@ -604,7 +608,6 @@ public class Sol_lite extends AppCompatActivity {
                     return true;
                 }
             }
-
             else if(c1.equalsIgnoreCase("spades")){
                 if(c2.equalsIgnoreCase("seven")){
                     p.spades.addCard(p.seven);
@@ -805,7 +808,6 @@ public class Sol_lite extends AppCompatActivity {
                     return true;
                 }
             }
-
             else{
                 return false;
             }
@@ -1365,3 +1367,4 @@ class SuitPiles{
         }
     }
 }
+
