@@ -1,5 +1,6 @@
 package vapor.sol;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -149,6 +150,10 @@ public class Sol_lite extends AppCompatActivity {
         title = (TextView) findViewById(R.id.title);
         greeting = game.greetingMessage();
         title.setText(greeting);
+
+        drawline = (TextView) findViewById(R.id.drawline);
+        drawline.setText(dline);
+
 
         line01 = (TextView) findViewById(R.id.line01);
         //if the pile is empty show the symbol, else the top card to string. true for all suitpiles
