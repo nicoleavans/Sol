@@ -23,6 +23,7 @@ public class Sol_lite extends AppCompatActivity {
     EditText commandInput;
     TextView title;
     TextView gameOutput;
+    TextView drawline;
     //suit piles
     //hearts
     TextView line01;
@@ -49,6 +50,9 @@ public class Sol_lite extends AppCompatActivity {
     String five;
     String six;
     String seven;
+    String greeting;
+    String input;
+    String dline;
 
 
     @Override
@@ -57,7 +61,11 @@ public class Sol_lite extends AppCompatActivity {
         setContentView(R.layout.activity_sol_lite);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        game = new Sol_lite();
 
+        /*
+         * Handles the input and input enter button
+         */
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,12 +73,66 @@ public class Sol_lite extends AppCompatActivity {
                 commandInput = (EditText) findViewById(R.id.commandInput);
                 gameOutput = (TextView) findViewById(R.id.gameOutput);
                 gameOutput.setText(commandInput.getText());
+                input = commandInput.getText().toString();
+                game.gameCommands(input);
+
+                //maybe this will update it every time
+                one = "one " + game.p.one.pile.toString();
+                two = "two " + game.p.two.pile.toString();
+                three = "three " + game.p.three.pile.toString();
+                four = "four " + game.p.four.pile.toString();
+                five = "five " + game.p.five.pile.toString();
+                six = "six " + game.p.six.pile.toString();
+                seven = "seven " + game.p.seven.pile.toString();
+
+                dline = "draw " + game.p.draw.q.peek().toString();
+
+                drawline.setText(dline);
+
+                line01.setText(game.p.hearts.pile.peek().toString());
+                line02.setText(game.p.spades.pile.peek().toString());
+                line03.setText(game.p.diamonds.pile.peek().toString());
+                line04.setText(game.p.clubs.pile.peek().toString());
+
+                /*
+                if(game.p.hearts.pile.empty()){
+                    line01.setText("♥ ");
+                }
+                else{
+                    line01.setText(game.p.hearts.pile.peek().toString());
+                }
+                if(game.p.spades.pile.empty()){
+                    line02.setText("♠ ");
+                }
+                else{
+                    line02.setText(game.p.spades.pile.peek().toString());
+                }
+                if(game.p.diamonds.pile.empty()){
+                    line03.setText("♦ ");
+                }
+                else{
+                    line03.setText(game.p.diamonds.pile.peek().toString());
+                }
+                if(game.p.clubs.pile.empty()){
+                    line04.setText("♣ ");
+                }
+                else{
+                    line04.setText(game.p.clubs.pile.peek().toString());
+                }
+                */
+                line05.setText(one);
+                line06.setText(two);
+                line07.setText(three);
+                line08.setText(four);
+                line09.setText(five);
+                line10.setText(six);
+                line11.setText(seven);
+
                 commandInput.setText(null);
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        game = new Sol_lite();
         //creates strings for playpiles
         one = "one " + game.p.one.pile.toString();
         two = "two " + game.p.two.pile.toString();
@@ -80,7 +142,13 @@ public class Sol_lite extends AppCompatActivity {
         six = "six " + game.p.six.pile.toString();
         seven = "seven " + game.p.seven.pile.toString();
 
-        title.setText(game.greetingMessage());
+        dline = "draw " + game.p.draw.q.peek().toString();
+
+        drawline.setText(dline);
+
+        title = (TextView) findViewById(R.id.title);
+        greeting = game.greetingMessage();
+        title.setText(greeting);
 
         line01 = (TextView) findViewById(R.id.line01);
         //if the pile is empty show the symbol, else the top card to string. true for all suitpiles
@@ -125,7 +193,6 @@ public class Sol_lite extends AppCompatActivity {
         line10.setText(six);
         line11 = (TextView) findViewById(R.id.line11);
         line11.setText(seven);
-
     }
 
 
