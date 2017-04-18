@@ -22,38 +22,11 @@ public class Sol_lite extends AppCompatActivity {
     Sol_lite game;
     //for user input
     EditText commandInput;
-    TextView title;
-    TextView gameOutput;
-    TextView drawline;
-    //suit piles
-    //hearts
-    TextView line01;
-    //spades
-    TextView line02;
-    //diamonds
-    TextView line03;
-    //clubs
-    TextView line04;
-    //playpiles
-    TextView line05;
-    TextView line06;
-    TextView line07;
-    TextView line08;
-    TextView line09;
-    TextView line10;
-    TextView line11;
+    TextView title, gameOutput, drawline, line01, line02, line03, line04, line05, line06,
+                line07, line08, line09, line10, line11;
 
     //because setText() doesn't like concatenation
-    String one;
-    String two;
-    String three;
-    String four;
-    String five;
-    String six;
-    String seven;
-    String greeting;
-    String input;
-    String dline;
+    String one, two, three, four, five, six, seven, greeting, input, dline, command;
 
 
     @Override
@@ -73,8 +46,9 @@ public class Sol_lite extends AppCompatActivity {
             public void onClick(View view) {
                 commandInput = (EditText) findViewById(R.id.commandInput);
                 gameOutput = (TextView) findViewById(R.id.gameOutput);
-              
-                gameOutput.setText("last command:  " + commandInput.getText());
+
+                command = "last command:  " + commandInput.getText();
+                gameOutput.setText(command);
 
                 input = commandInput.getText().toString();
                 game.gameCommands(input);
@@ -201,39 +175,6 @@ public class Sol_lite extends AppCompatActivity {
         //so Sol_Lite corresponds to the previous launcher class
         public Sol_lite(){
             p = new PlaySpaces();
-        }
-
-        /*
-         * Main method creates the launcher (and thus everything else)
-         * displays the greeting message and the initial step
-         * and starts the game sequence
-         */
-        public static void main(String[] args) {
-            Sol_lite l = new Sol_lite();
-            l.greetingMessage();
-            System.out.println("\n\nI N S T R U C T I O N S\n");
-            System.out.println("To quit, type \"quit\". To draw a new card, type \"draw\".\n");
-            System.out.println("To move, type the name of the target pile, followed by the name of the source pile, and the number of cards you would like to move if more than one.\n");
-            System.out.println("For example \"seven spades 3\" or \"hearts one\" or \"seven three 2\" or \"five draw\"");
-            l.printCurrentStep();
-            l.startGame();
-        }
-
-        public void startGame(){
-            while(isRunning){
-                if(gameCommands(sc.nextLine())) {
-                    if(isRunning){
-                        printCurrentStep();
-                    }
-                }
-                else{
-                    System.err.println("Invalid. Try another option");
-                    System.out.println("Next move");
-                }
-            }
-            sc.close();
-            System.exit(0);
-
         }
 
         public boolean gameCommands(String commands){
@@ -813,53 +754,6 @@ public class Sol_lite extends AppCompatActivity {
             }
             return true;
         }
-
-        public void restart(){
-            Sol_lite la = new Sol_lite();
-            la.printCurrentStep();
-            la.startGame();
-        }
-
-        public void printCurrentStep(){
-            System.out.println("\n" + "-------------Current Step----------------");
-            System.out.println("Open Card:  " + p.draw.q.peek().toString() + "\n");
-            System.out.printf("Card Stacks:  \n");
-            if(!p.clubs.pile.empty()){
-                System.out.println(p.clubs.pile.peek().toString()+ "\n");
-            }
-            else{
-                System.out.println("♣\n");
-            }
-            if(!p.hearts.pile.empty()){
-                System.out.println(p.hearts.pile.peek().toString()+ "\n");
-            }
-            else{
-                System.out.println("♥\n");
-            }
-            if(!p.spades.pile.empty()){
-                System.out.println(p.spades.pile.peek().toString()+ "\n");
-            }
-            else{
-                System.out.println("♠\n");
-            }
-            if(!p.diamonds.pile.empty()){
-                System.out.println(p.diamonds.pile.peek().toString() + "\n");
-            }
-            else{
-                System.out.println("♦\n");
-            }
-            System.out.println("\n");
-            System.out.println("Card Lists: ");
-            System.out.println("one " + p.one.pile.toString() + "\n");
-            System.out.println("two " + p.two.pile.toString() + "\n");
-            System.out.println("three " + p.three.pile.toString() + "\n");
-            System.out.println("four " + p.four.pile.toString() + "\n");
-            System.out.println("five " + p.five.pile.toString() + "\n");
-            System.out.println("six " + p.six.pile.toString() + "\n");
-            System.out.println("seven " + p.seven.pile.toString() + "\n");
-            System.out.print("\n" + "Your Next Move: ");
-
-        }
         private String greetingMessage() {
 
             String greeting = " ______   _____   __  " + "\n"
@@ -1015,7 +909,6 @@ class Decks {
     }
 }
 
-
 /**
  * This class contains the infrastructure for the draw pile.
  *
@@ -1051,8 +944,6 @@ class DrawPiles{
     }
 }
 
-
-
 /**
  * This class contains the methods and infrastructure for the 7
  * piles players move cards around within. It is distinguished
@@ -1074,23 +965,6 @@ class PlayPiles{
     * This method handles a play pile target.
     * @param p  the target play pile
     */
-
-    public void addCard(PlayPiles p){
-        Cards c = p.pile.peek();
-        Cards val;
-        //if the pile is empty it can go there regardless
-        if(pile.empty() && c.getValue() == 13){
-            pile.add(p.pile.pop());
-        }
-        //else it has something to peek at and check
-        else if(!pile.empty()){
-            val = pile.peek();
-            //if the colors are opposite and the value is less, add to the stack
-            if(!val.getColor().equals(c.getColor()) && c.getValue() == val.getValue() - 1){
-                pile.add(p.pile.pop());
-            }
-        }
-    }
     public void addCard(PlayPiles p, int i){
         //card c here is used as the lead card to be moved, it needs to be the one at the end
         Cards c = null;
@@ -1109,14 +983,18 @@ class PlayPiles{
                 pile.add(s.pop());
             }
             //turns up the leftover card
-            p.pile.peek().turnUp();
+            if(!p.pile.empty()){
+                p.pile.peek().turnUp();
+            }
         }
         //if the colors are opposite and the value is less, add to the stack
         else if(!val.getColor().equals(c.getColor()) && c.getValue() == val.getValue() - 1 && c.getUp()){
             for(int temp = i; temp > 0; temp--){
                 pile.add(s.pop());
             }
-            p.pile.peek().turnUp();
+            if(!p.pile.empty()){
+                p.pile.peek().turnUp();
+            }
         }
         else{
             for(int temp = i; temp > 0; temp--){
@@ -1137,6 +1015,9 @@ class PlayPiles{
         //if the pile is empty it can go there regardless
         if(pile.empty() && c.getValue() == 13){
             pile.add(s.pile.pop());
+            if(!s.pile.empty()){
+                s.pile.peek().turnUp();
+            }
         }
         //else it has something to peek at and check
         else if(!pile.empty()){
@@ -1144,6 +1025,9 @@ class PlayPiles{
             //if the colors are opposite and the value is less, add to the stack
             if(!val.getColor().equals(c.getColor()) && c.getValue() == val.getValue() - 1){
                 pile.add(s.pile.pop());
+                if(!s.pile.empty()){
+                    s.pile.peek().turnUp();
+                }
             }
         }
     }
@@ -1331,13 +1215,20 @@ class SuitPiles{
             //if the pile is empty, it does not peek and simply takes an ace
             if(pile.empty() && c.getValue() == 1){
                 pile.add(p.pile.pop());
+                if(!p.pile.empty()){
+                    p.pile.peek().turnUp();
+                }
             }
             //elseif the pile does have cards, we peek
-            else if(!pile.empty()){
+            //TODO evaluate change: this was else if(!pile.empty())
+            else{
                 val = pile.peek();
                 //if the card to be added is greater by one
                 if(c.getValue() == val.getValue() - 1){
                     pile.add(p.pile.pop());
+                    if(!p.pile.empty()){
+                        p.pile.peek().turnUp();
+                    }
                 }
             }
         }
@@ -1355,6 +1246,9 @@ class SuitPiles{
             //if the pile is empty, it does not peek and simply takes an ace
             if(pile.empty() && c.getValue() == 1){
                 pile.add(s.pile.pop());
+                if(!s.pile.empty()){
+                    s.pile.peek().turnUp();
+                }
             }
             //elseif the pile does have cards, we peek
             else if(!pile.empty()){
@@ -1362,9 +1256,11 @@ class SuitPiles{
                 //if the current value on the pile is one less than the card to be added
                 if(val.getValue() == c.getValue() + 1){
                     pile.add(s.pile.pop());
+                    if(!s.pile.empty()){
+                        s.pile.peek().turnUp();
+                    }
                 }
             }
         }
     }
 }
-
