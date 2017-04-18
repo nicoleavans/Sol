@@ -84,8 +84,12 @@
 
     <string name="action_settings">Settings</string>
 
+    <string name="corey">This is some info about Corey</string>
+    <string name="david">This is some info about David</string>
+    <string name="kaleb">This is some info about Kaleb</string>
+    <string name="nicole">This is some info about Nicole</string>
     <string name="title_activity_cups">Cups</string>
     <string name="development_team">Development Team</string>
-    <string name="about_text">about_text</string>
+    <string name="about_text">A recent survey was conducted of user satisfaction with various commercially available computer card games.  Based on user feedback, we decided there was an opportunity to develop such a game to address the dissatisfaction/preferences of a sizable group of players.</string>
     <string name="title_activity_sol_lite">Sol_lite</string>
 </resources>
