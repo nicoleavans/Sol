@@ -81,4 +81,16 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/team_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|bottom"
+        android:layout_marginBottom="80dp"
+        android:keepScreenOn="true"
+        android:text=""
+        android:textColor="#00FFFF"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
 </android.support.constraint.ConstraintLayout>
