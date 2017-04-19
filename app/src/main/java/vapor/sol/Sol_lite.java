@@ -978,7 +978,7 @@ class PlayPiles{
                     s.append(" " + c.toString() + " ");
                 }
                 else{
-                    s.append(" [ ] ");
+                    s.append(" [?] ");
                 }
             }
         }
