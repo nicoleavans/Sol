@@ -1264,4 +1264,3 @@ class SuitPiles{
         }
     }
 }
-

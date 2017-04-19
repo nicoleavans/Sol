@@ -17,6 +17,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -27,6 +28,10 @@ public class Main2Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     Intent myIntent = null;
+
+    ImageView Corey, David, Kaleb, Nicole;
+
+    TextView C;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +59,70 @@ public class Main2Activity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        Corey = (ImageView) findViewById(R.id.Corey);
+        David = (ImageView) findViewById(R.id.David);
+        Kaleb = (ImageView) findViewById(R.id.Kaleb);
+        Nicole = (ImageView) findViewById(R.id.Nicole);
+
+        C = (TextView) findViewById(R.id.team_text);
+
+        Corey.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // assign images
+                Corey.setImageResource(R.drawable.spadea);
+                David.setImageResource(R.drawable.cb6);
+                Kaleb.setImageResource(R.drawable.cb1);
+                Nicole.setImageResource(R.drawable.cb5);
+
+                C.setText(R.string.corey);
+            }
+        });
+
+        David.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // assign images
+                Corey.setImageResource(R.drawable.cb4);
+                David.setImageResource(R.drawable.hearta);
+                Kaleb.setImageResource(R.drawable.cb1);
+                Nicole.setImageResource(R.drawable.cb5);
+
+                C.setText(R.string.david);
+            }
+        });
+
+        Kaleb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // assign images
+                Corey.setImageResource(R.drawable.cb4);
+                David.setImageResource(R.drawable.cb6);
+                Kaleb.setImageResource(R.drawable.cluba);
+                Nicole.setImageResource(R.drawable.cb5);
+
+                C.setText(R.string.kaleb);
+            }
+        });
+
+        Nicole.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // assign images
+                Corey.setImageResource(R.drawable.cb4);
+                David.setImageResource(R.drawable.cb6);
+                Kaleb.setImageResource(R.drawable.cb1);
+                Nicole.setImageResource(R.drawable.diamonda);
+
+                C.setText(R.string.nicole);
+            }
+        });
+
     }
+
+
+
 
     @Override
     public void onBackPressed() {
@@ -104,13 +172,17 @@ public class Main2Activity extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
             myIntent = new Intent(Main2Activity.this, Sol_lite.class);
         } else if (id == R.id.nav_slideshow) {
-
+            Toast.makeText(Main2Activity.this, "Area Currently Under Development.  ¯\\_(ツ)_/¯", Toast.LENGTH_SHORT).show();
+            myIntent = new Intent(Main2Activity.this, Main2Activity.class);
         } else if (id == R.id.nav_manage) {
-
+            Toast.makeText(Main2Activity.this, "Area Currently Under Development.  ¯\\_(ツ)_/¯", Toast.LENGTH_SHORT).show();
+            myIntent = new Intent(Main2Activity.this, Main2Activity.class);
         } else if (id == R.id.nav_share) {
-
+            Toast.makeText(Main2Activity.this, "Area Currently Under Development.  ¯\\_(ツ)_/¯", Toast.LENGTH_SHORT).show();
+            myIntent = new Intent(Main2Activity.this, Main2Activity.class);
         } else if (id == R.id.nav_send) {
-
+            Toast.makeText(Main2Activity.this, "Area Currently Under Development.  ¯\\_(ツ)_/¯", Toast.LENGTH_SHORT).show();
+            myIntent = new Intent(Main2Activity.this, Main2Activity.class);
         }
 
         //DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
