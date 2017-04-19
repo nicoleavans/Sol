@@ -71,7 +71,7 @@ public class Main2Activity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 // assign images
-                Corey.setImageResource(R.drawable.spadea);
+                Corey.setImageResource(R.drawable.bio_corey);
                 David.setImageResource(R.drawable.cb6);
                 Kaleb.setImageResource(R.drawable.cb1);
                 Nicole.setImageResource(R.drawable.cb5);
@@ -85,7 +85,7 @@ public class Main2Activity extends AppCompatActivity
             public void onClick(View view) {
                 // assign images
                 Corey.setImageResource(R.drawable.cb4);
-                David.setImageResource(R.drawable.hearta);
+                David.setImageResource(R.drawable.bio_david);
                 Kaleb.setImageResource(R.drawable.cb1);
                 Nicole.setImageResource(R.drawable.cb5);
 
@@ -99,7 +99,7 @@ public class Main2Activity extends AppCompatActivity
                 // assign images
                 Corey.setImageResource(R.drawable.cb4);
                 David.setImageResource(R.drawable.cb6);
-                Kaleb.setImageResource(R.drawable.cluba);
+                Kaleb.setImageResource(R.drawable.bio_kaleb);
                 Nicole.setImageResource(R.drawable.cb5);
 
                 C.setText(R.string.kaleb);
@@ -113,7 +113,7 @@ public class Main2Activity extends AppCompatActivity
                 Corey.setImageResource(R.drawable.cb4);
                 David.setImageResource(R.drawable.cb6);
                 Kaleb.setImageResource(R.drawable.cb1);
-                Nicole.setImageResource(R.drawable.diamonda);
+                Nicole.setImageResource(R.drawable.bio_nicole);
 
                 C.setText(R.string.nicole);
             }
