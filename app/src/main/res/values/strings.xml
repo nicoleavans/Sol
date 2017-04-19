@@ -84,10 +84,10 @@
 
     <string name="action_settings">Settings</string>
 
-    <string name="corey">This is some info about Corey</string>
-    <string name="david">This is some info about David</string>
-    <string name="kaleb">This is some info about Kaleb</string>
-    <string name="nicole">This is some info about Nicole</string>
+    <string name="corey">Hello fellow time waster!  Corey Kraft here, project manager.  I am sure you are dying to hear all about my personal life because you love our app so much.  I am sure you would love to hear all about how I like long walks on the beach with my pug and listening to Norman Connors vinyls while I sip a slightly above bottom shelf scotch and indulge in some classic mid century litterature... but I am not going to tell you any of that.  You see my pug hates sand, and I am not sure I am crazy about you being all up in my business. Why are you even still reading this?  Go! Go play! hahaha GO!</string>
+    <string name="david">David Donovan: Architectural Manager   I like to play games, draw diagrams, and I am an avid animal lover. This semester we were tasked with the fun task of making solitaire and I learned a lot about my task as Architect and Design. It was a trip but was very worth while.</string>
+    <string name="kaleb">Hello, my name is Kaleb and I am the Quality Assurance Manager.  My role in this application is based on testing purposes.  Testing the code, debugging, and running the application as a whole to determine its functionality runs as needed for users.  On a side note, I am a senior at the University of Tennessee at Chattanooga and my major is computer science with a concentration in information security.</string>
+    <string name="nicole">Nicole Avans: Development Manager   I dont care what is written about me, so long as it isnt true. - Dorothy Parker</string>
     <string name="title_activity_cups">Cups</string>
     <string name="development_team">Development Team</string>
     <string name="about_text">A recent survey was conducted of user satisfaction with various commercially available computer card games.  Based on user feedback, we decided there was an opportunity to develop such a game to address the dissatisfaction/preferences of a sizable group of players.</string>
