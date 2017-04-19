@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -55,13 +56,13 @@ public class Sol_lite extends AppCompatActivity {
 
                 //maybe this will update it every time
 
-                one = "one:      " + game.p.one.pile.toString();
-                two = "two:      " + game.p.two.pile.toString();
-                three = "three:   " + game.p.three.pile.toString();
-                four = "four:     " + game.p.four.pile.toString();
-                five = "five:      " + game.p.five.pile.toString();
-                six = "six:        " + game.p.six.pile.toString();
-                seven = "seven:  " + game.p.seven.pile.toString();
+                one = "one:      " + game.p.one.toString();
+                two = "two:      " + game.p.two.toString();
+                three = "three:   " + game.p.three.toString();
+                four = "four:     " + game.p.four.toString();
+                five = "five:      " + game.p.five.toString();
+                six = "six:        " + game.p.six.toString();
+                seven = "seven:  " + game.p.seven.toString();
 
                 dline = "draw:  " + game.p.draw.q.peek().toString();
                 drawline.setText(dline);
@@ -99,19 +100,26 @@ public class Sol_lite extends AppCompatActivity {
                 line10.setText(six);
                 line11.setText(seven);
 
+                if(game.p.clubs.pile.peek().getValue() == 13 &&
+                        game.p.hearts.pile.peek().getValue() == 13 &&
+                        game.p.diamonds.pile.peek().getValue() == 13 &&
+                        game.p.spades.pile.peek().getValue() == 13){
+                    Toast toast = Toast.makeText(getApplicationContext(), "You win!", Toast.LENGTH_LONG);
+                    toast.show();
+                }
                 commandInput.setText(null);
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //creates strings for playpiles
-        one = "one:      " + game.p.one.pile.toString();
-        two = "two:      " + game.p.two.pile.toString();
-        three = "three:   " + game.p.three.pile.toString();
-        four = "four:     " + game.p.four.pile.toString();
-        five = "five:      " + game.p.five.pile.toString();
-        six = "six:        " + game.p.six.pile.toString();
-        seven = "seven:  " + game.p.seven.pile.toString();
+        one = "one:      " + game.p.one.toString();
+        two = "two:      " + game.p.two.toString();
+        three = "three:   " + game.p.three.toString();
+        four = "four:     " + game.p.four.toString();
+        five = "five:      " + game.p.five.toString();
+        six = "six:        " + game.p.six.toString();
+        seven = "seven:  " + game.p.seven.toString();
         dline = "draw:  " + game.p.draw.q.peek().toString();
 
         title = (TextView) findViewById(R.id.title);
@@ -958,6 +966,26 @@ class PlayPiles{
      */
     PlayPiles(){
         pile = new Stack<Cards>();
+    }
+    /*
+     * overrides to string
+     */
+    public String toString(){
+        StringBuilder s = new StringBuilder();
+        if(!this.pile.empty()){
+            for (Cards c: this.pile) {
+                if(c.getUp()){
+                    s.append(" " + c.toString() + " ");
+                }
+                else{
+                    s.append(" [ ] ");
+                }
+            }
+        }
+        else{
+            s.append(" ");
+        }
+        return s.toString();
     }
    /*
     * The upcoming methods handle movement, using a target pile

@@ -2,6 +2,8 @@ package vapor.sol;
 
 import android.annotation.SuppressLint;
 import android.content.ClipData;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -1120,7 +1122,7 @@ public class GameBoard extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent motionEvent) {
                 pile3_3.setImageResource(getResources().getIdentifier(d.pile.get(24).getImgadr(), "drawable", getPackageName()));
-                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN && d.pile.get(24).getUp()){
                     ClipData clipData = ClipData.newPlainText("","");
                     View.DragShadowBuilder dsb = new View.DragShadowBuilder(pile3_3);
                     //this is deprecated, it could be startDragAndDrop probably
@@ -1138,7 +1140,7 @@ public class GameBoard extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent motionEvent) {
                 pile2_1.setImageResource(getResources().getIdentifier(d.pile.get(25).getImgadr(), "drawable", getPackageName()));
-                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN && d.pile.get(25).getUp()){
                     ClipData clipData = ClipData.newPlainText("","");
                     View.DragShadowBuilder dsb = new View.DragShadowBuilder(pile2_1);
                     //this is deprecated, it could be startDragAndDrop probably
@@ -1152,14 +1154,15 @@ public class GameBoard extends AppCompatActivity {
             }
         });
         pile2_2.setOnTouchListener(new View.OnTouchListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public boolean onTouch(View v, MotionEvent motionEvent) {
                 pile2_2.setImageResource(getResources().getIdentifier(d.pile.get(26).getImgadr(), "drawable", getPackageName()));
-                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN && d.pile.get(26).getUp()){
                     ClipData clipData = ClipData.newPlainText("","");
                     View.DragShadowBuilder dsb = new View.DragShadowBuilder(pile2_2);
                     //this is deprecated, it could be startDragAndDrop probably
-                    pile2_2.startDrag(clipData, dsb, pile2_2, 0);
+                    pile2_2.startDragAndDrop(clipData, dsb, pile2_2, 0);
                     pile2_2.setVisibility(View.INVISIBLE);
                     return true;
                 }
@@ -1176,7 +1179,7 @@ public class GameBoard extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent motionEvent) {
                 pile1_1.setImageResource(getResources().getIdentifier(d.pile.get(27).getImgadr(), "drawable", getPackageName()));
-                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN && d.pile.get(27).getUp() == true){
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN && d.pile.get(27).getUp()){
                     ClipData clipData = ClipData.newPlainText("","");
                     View.DragShadowBuilder dsb = new View.DragShadowBuilder(pile1_1);
                     //this is deprecated, it could be startDragAndDrop probably
