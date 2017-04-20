@@ -65,7 +65,12 @@ public class Sol_lite extends AppCompatActivity {
                 six = "six:        " + game.p.six.toString();
                 seven = "seven:  " + game.p.seven.toString();
 
-                dline = "draw:  " + game.p.draw.q.peek().toString();
+                if(!game.p.draw.q.isEmpty()){
+                    dline = "draw:  " + game.p.draw.q.peek().toString();
+                }
+                else{
+                    dline = " ";
+                }
                 drawline.setText(dline);
 
 
@@ -1264,7 +1269,7 @@ class SuitPiles{
             else{
                 val = pile.peek();
                 //if the card to be added is greater by one
-                if(c.getValue() == val.getValue() - 1){
+                if(c.getValue() == val.getValue() + 1){
                     pile.add(p.pile.pop());
                     if(!p.pile.empty()){
                         p.pile.peek().turnUp();
