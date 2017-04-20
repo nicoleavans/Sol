@@ -106,6 +106,7 @@ public class Sol_lite extends AppCompatActivity {
                     imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
                 } catch (Exception e) { }
 
+
                 if(!game.p.clubs.pile.empty() &&
                         !game.p.diamonds.pile.empty() &&
                         !game.p.spades.pile.empty() &&
