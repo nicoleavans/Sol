@@ -51,6 +51,7 @@
         </activity>
         <activity
             android:name=".Sol_lite"
+            android:windowSoftInputMode="stateHidden"
             android:label="@string/title_activity_sol_lite"
             android:parentActivityName=".Main2Activity"
             android:theme="@style/AppTheme.NoActionBar">
