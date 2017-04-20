@@ -1257,7 +1257,7 @@ class SuitPiles{
             else{
                 val = pile.peek();
                 //if the card to be added is greater by one
-                if(c.getValue() == val.getValue() - 1){
+                if(c.getValue() == val.getValue() + 1){
                     pile.add(p.pile.pop());
                     if(!p.pile.empty()){
                         p.pile.peek().turnUp();
