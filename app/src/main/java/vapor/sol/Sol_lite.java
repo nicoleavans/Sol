@@ -64,7 +64,12 @@ public class Sol_lite extends AppCompatActivity {
                 six = "six:        " + game.p.six.toString();
                 seven = "seven:  " + game.p.seven.toString();
 
-                dline = "draw:  " + game.p.draw.q.peek().toString();
+                if(!game.p.draw.q.isEmpty()){
+                    dline = "draw:  " + game.p.draw.q.peek().toString();
+                }
+                else{
+                    dline = " ";
+                }
                 drawline.setText(dline);
 
 
