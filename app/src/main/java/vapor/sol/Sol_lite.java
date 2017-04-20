@@ -100,12 +100,17 @@ public class Sol_lite extends AppCompatActivity {
                 line10.setText(six);
                 line11.setText(seven);
 
-                if(game.p.clubs.pile.peek().getValue() == 13 &&
-                        game.p.hearts.pile.peek().getValue() == 13 &&
-                        game.p.diamonds.pile.peek().getValue() == 13 &&
-                        game.p.spades.pile.peek().getValue() == 13){
-                    Toast toast = Toast.makeText(getApplicationContext(), "You win!", Toast.LENGTH_LONG);
-                    toast.show();
+                if(!game.p.clubs.pile.empty() &&
+                        !game.p.diamonds.pile.empty() &&
+                        !game.p.spades.pile.empty() &&
+                        !game.p.hearts.pile.empty()){
+                    if(game.p.clubs.pile.peek().getValue() == 13 &&
+                            game.p.hearts.pile.peek().getValue() == 13 &&
+                            game.p.diamonds.pile.peek().getValue() == 13 &&
+                            game.p.spades.pile.peek().getValue() == 13){
+                        Toast toast = Toast.makeText(getApplicationContext(), "You win!", Toast.LENGTH_LONG);
+                        toast.show();
+                    }
                 }
                 commandInput.setText(null);
             }
