@@ -31,33 +31,33 @@
         android:keepScreenOn="true"
         android:text="INSTRUCTIONS"
         android:textColor="#F5F5F5"
-        android:textSize="10sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/Sol_lite_helptext"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="115dp"
+        android:layout_marginTop="125dp"
         android:layout_marginLeft="10dp"
         android:gravity="top"
         android:keepScreenOn="true"
-        android:text="To quit, type quit. To draw a new card, type draw.  To move, type the name of the target pile, followed by the name of the source pile, and the number of cards you would like to move if more than one.  For example: 'seven spades 3' or 'seven three 2' "
+        android:text="To quit, push the back arrow. To draw a new card, type draw.  To move, type the name of the target pile, followed by the name of the source pile, and the number of cards you would like to move (if more than one).  For example: 'seven spades 3' or 'seven three 2' "
         android:textColor="#F5F5F5"
-        android:textSize="9sp"
+        android:textSize="15sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/gameOutput"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="175dp"
         android:layout_marginLeft="10dp"
         android:gravity="top"
         android:keepScreenOn="true"
         android:text="last command:  "
         android:textColor="#F5F5F5"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
@@ -70,7 +70,7 @@
         android:keepScreenOn="true"
         android:text="Test"
         android:textColor="#F5F5F5"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
 
@@ -84,46 +84,46 @@
         android:keepScreenOn="true"
         android:text="Test"
         android:textColor="#F5F5F5"
-        android:textSize="13sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/line02"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="265dp"
         android:layout_marginLeft="10dp"
         android:gravity="top"
         android:keepScreenOn="true"
         android:text="Test"
         android:textColor="#F5F5F5"
-        android:textSize="13sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/line03"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="290dp"
         android:layout_marginLeft="10dp"
         android:gravity="top"
         android:keepScreenOn="true"
         android:text="Test"
         android:textColor="#F5F5F5"
-        android:textSize="13sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/line04"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="315dp"
         android:layout_marginLeft="10dp"
         android:gravity="top"
         android:keepScreenOn="true"
         android:text="Test"
         android:textColor="#F5F5F5"
-        android:textSize="13sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
@@ -136,7 +136,7 @@
         android:keepScreenOn="true"
         android:text="Test"
         android:textColor="#F5F5F5"
-        android:textSize="13sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
@@ -149,7 +149,7 @@
         android:keepScreenOn="true"
         android:text="Test"
         android:textColor="#F5F5F5"
-        android:textSize="13sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
@@ -162,7 +162,7 @@
         android:keepScreenOn="true"
         android:text="Test"
         android:textColor="#F5F5F5"
-        android:textSize="13sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
@@ -175,7 +175,7 @@
         android:keepScreenOn="true"
         android:text="Test"
         android:textColor="#F5F5F5"
-        android:textSize="13sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
@@ -188,7 +188,7 @@
         android:keepScreenOn="true"
         android:text="Test"
         android:textColor="#F5F5F5"
-        android:textSize="13sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
@@ -201,7 +201,7 @@
         android:keepScreenOn="true"
         android:text="Test"
         android:textColor="#F5F5F5"
-        android:textSize="13sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
@@ -214,7 +214,7 @@
         android:keepScreenOn="true"
         android:text="Test"
         android:textColor="#F5F5F5"
-        android:textSize="13sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
 </android.support.constraint.ConstraintLayout>
