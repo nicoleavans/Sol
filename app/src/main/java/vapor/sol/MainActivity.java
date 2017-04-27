@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onAnimationEnd(Animation animation) {
                         anim_right.setAnimationListener(null);
                         // Start GameBoard activity
-                        Intent myIntent = new Intent(MainActivity.this, GameBoard.class);
+                        Intent myIntent = new Intent(MainActivity.this, Sol_lite.class);
                         startActivity(myIntent);
                     }
 

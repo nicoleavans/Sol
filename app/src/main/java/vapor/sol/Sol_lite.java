@@ -62,7 +62,7 @@ public class Sol_lite extends AppCompatActivity {
                 three = "three:   " + game.p.three.toString();
                 four = "four:     " + game.p.four.toString();
                 five = "five:      " + game.p.five.toString();
-                six = "six:        " + game.p.six.toString();
+                six = "six:       " + game.p.six.toString();
                 seven = "seven:  " + game.p.seven.toString();
 
                 if(!game.p.draw.q.isEmpty()){
@@ -135,7 +135,7 @@ public class Sol_lite extends AppCompatActivity {
         three = "three:   " + game.p.three.toString();
         four = "four:     " + game.p.four.toString();
         five = "five:      " + game.p.five.toString();
-        six = "six:        " + game.p.six.toString();
+        six = "six:       " + game.p.six.toString();
         seven = "seven:  " + game.p.seven.toString();
         dline = "draw:  " + game.p.draw.q.peek().toString();
 

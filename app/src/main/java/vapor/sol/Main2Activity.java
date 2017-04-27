@@ -1,6 +1,7 @@
 package vapor.sol;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -170,10 +171,12 @@ public class Main2Activity extends AppCompatActivity
             myIntent = new Intent(Main2Activity.this, Cups.class);
             //startActivity(myIntent);
         } else if (id == R.id.nav_gallery) {
-            myIntent = new Intent(Main2Activity.this, Sol_lite.class);
+            myIntent = new Intent(Main2Activity.this, GameBoard.class);
         } else if (id == R.id.nav_slideshow) {
-            Toast.makeText(Main2Activity.this, "Area Currently Under Development.  ¯\\_(ツ)_/¯", Toast.LENGTH_SHORT).show();
-            myIntent = new Intent(Main2Activity.this, Main2Activity.class);
+            //Toast.makeText(Main2Activity.this, "Area Currently Under Development.  ¯\\_(ツ)_/¯", Toast.LENGTH_SHORT).show();
+            //myIntent = new Intent(Main2Activity.this, Main2Activity.class);
+            Uri uri = Uri.parse("https://en.wikipedia.org/wiki/Klondike_(solitaire)#Rules"); // missing 'http://' will cause crashed
+            myIntent = new Intent(Intent.ACTION_VIEW, uri);
         } else if (id == R.id.nav_manage) {
             Toast.makeText(Main2Activity.this, "Area Currently Under Development.  ¯\\_(ツ)_/¯", Toast.LENGTH_SHORT).show();
             myIntent = new Intent(Main2Activity.this, Main2Activity.class);
